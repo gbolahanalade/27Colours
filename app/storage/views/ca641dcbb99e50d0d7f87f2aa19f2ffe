@@ -1,0 +1,163 @@
+    <?php $__env->startSection('header'); ?>
+        <title>Pictures | 27Colours</title>
+         <!-- navigation -->
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="<?php echo action('HomeController@index'); ?>">
+                                <i class="fa fa-home fa-fw fa-2x"></i>
+                                <span class="sr-only">(Current)</span>
+                            </a>
+                        </li>
+                        <li><a href="<?php echo action('SongController@index'); ?>"><i class=""></i> Songs</a></li>
+                        <li><a href="<?php echo action('VideoController@index'); ?>"><i class=""></i> Videos</a></li>
+                        <li class="active"><a href="<?php echo action('GalleryController@index'); ?>"><i class=""></i> Pictures</a></li>
+                        <li><a href="<?php echo action('TalentController@index'); ?>"><i class=""></i> Talents</a></li>
+                    </ul>
+    <?php $__env->stopSection(); ?>
+    <?php $__env->startSection('content'); ?>
+        <!-- posts -->
+    <div id="section-3a" class="featured-posts">
+        <div class="container">
+          <div class="row">
+              <div class="col-md-9">
+                <h3 class="text-center"><i class="fa fa-camera"></i> Pictures</h3>
+                <div class="featured-tab">
+                    <ul class="nav nav-pills nav-justified">
+                        <li class="active"><a href="#modelling" role="tab" data-toggle="tab">Modelling</a></li>
+                        <li><a href="#others" role="tab" data-toggle="tab">Others</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <!-- featured songs -->
+
+                        <!-- modelling -->
+                        <div class="tab-pane fade active in" id="modelling">
+                            <!-- Errors, Alerts -->
+                            <?php if(Session::get('errors')): ?>
+                                <p class="alert alert-error alert-danger fade in" role="alert"><a>
+                                <?php echo e(Session::get('errors')); ?></a></p>
+                            <?php endif; ?>
+                            <?php if(Session::get('notices')): ?>
+                                <p class="alert alert-info fade in" role="alert"><a>
+                                <?php echo e(Session::get('notices')); ?></a></p>
+                            <?php endif; ?>
+                            <?php if($modelling->isEmpty()): ?>
+                                <p class="text-center alert alert-info"  role="alert"> There are no Model pictures!</p>
+                            <?php else: ?>
+                            <!-- Fetch Songs -->
+                            <?php foreach($modelling as $model): ?>
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <div class="featured-post">
+                                            <figure>
+                                                <?php echo HTML::image($model->image, $model->title, array('class'=>'img-responsive')); ?>
+
+                                                <div class="rating">
+                                                <ul class="list-inline rating-stars">
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star-half-o"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                                                </ul>
+                                                </div> <!-- end .rating -->
+
+                                              <figcaption>
+                                                <div class="post-view">
+                                                  <a href="<?php echo action('GalleryController@showGallery', array('id'=> $model->id)); ?>"><i class="fa fa-camera fa-5x pulse2"></i></a>
+                                                </div>
+                                              </figcaption>
+                                            </figure>
+                                            <h4 class="post-title"><?php echo HTML::linkAction('GalleryController@showGallery', $model->caption, array($model->id), array('class'=>'post-title')); ?></h4>
+                                            <p class="post-uploader">
+                                                <i class="fa fa-user fa-fw"></i>
+                                                <?php echo HTML::linkAction('ProfileController@show', $model->user->username, array('id'=>$model->user->id),
+                                                array('class'=>'post-uploader')); ?>
+
+                                            </p>  
+                                            <ul class="post-util list-inline">
+                                                <li><i class="fa fa-comments"></i> 20 </li>
+                                                <li><i class="fa fa-heart"></i> 20 </li>
+                                                <li><i class="fa fa-clock-o"></i> <?php echo $model->timeago; ?></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            <?php endforeach; ?>
+                            <?php endif; ?> 
+                            <br>
+                            <!-- pagination -->
+                        </div>
+                        <!-- others -->
+                        <div class="tab-pane fade active in" id="others">
+                            <!-- Errors, Alerts -->
+                            <?php if(Session::get('errors')): ?>
+                                <p class="alert alert-error alert-danger fade in" role="alert"><a>
+                                <?php echo e(Session::get('errors')); ?></a></p>
+                            <?php endif; ?>
+                            <?php if(Session::get('notices')): ?>
+                                <p class="alert alert-info fade in" role="alert"><a>
+                                <?php echo e(Session::get('notices')); ?></a></p>
+                            <?php endif; ?>
+                            <?php if($others->isEmpty()): ?>
+                                <p class="text-center alert alert-info"  role="alert"> There are no pictures!</p>
+                            <?php else: ?>
+                            <!-- Fetch Songs -->
+                            <?php foreach($others as $other): ?>
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <div class="featured-post">
+                                            <figure>
+                                                <?php echo HTML::image($other->image, $other->title, array('class'=>'img-responsive')); ?>
+
+                                                <div class="rating">
+                                                <ul class="list-inline rating-stars">
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star-half-o"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                                                </ul>
+                                                </div> <!-- end .rating -->
+
+                                              <figcaption>
+                                                <div class="post-view">
+                                                  <a href="<?php echo action('GalleryController@showGallery', array('id'=> $other->id)); ?>"><i class="fa fa-camera fa-5x pulse2"></i></a>
+                                                </div>
+                                              </figcaption>
+                                            </figure>
+                                            <h4 class="post-title"><?php echo HTML::linkAction('GalleryController@showGallery', $other->caption, array($other->id), array('class'=>'post-title')); ?></h4>
+                                            <p class="post-uploader">
+                                                <i class="fa fa-user fa-fw"></i>
+                                                <?php echo HTML::linkAction('ProfileController@show', $other->user->username, array('id'=>$other->user->id),
+                                                array('class'=>'post-uploader')); ?>
+
+                                            </p>  
+                                            <ul class="post-util list-inline">
+                                                <li><i class="fa fa-comments"></i> 20 </li>
+                                                <li><i class="fa fa-heart"></i> 20 </li>
+                                                <li><i class="fa fa-clock-o"></i> <?php echo $other->timeago; ?></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            <?php endforeach; ?>
+                            <?php endif; ?> 
+                            <br>
+                            <!-- pagination -->
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-3 sidebar">
+                  <?php echo $__env->make('gallery.gallery-sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+              </div>
+          </div> <!-- ./ row ends -->            
+        </div>
+    </div>       
+    <?php $__env->stopSection(); ?>
+    <!-- FOOTER - IN MASTER BLADE -->
+</div> <!-- ./ wrapper ends -->
+
+<?php $__env->startSection('scripts2'); ?>
+    <!-- jQuery Version 1.11.0 -->
+    <script src="<?php echo asset('js/jquery-2.1.3.min.js'); ?>"></script>
+    <script src="<?php echo asset('js/jquery-ui.js'); ?>"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<?php echo asset('js/bootstrap/bootstrap.min.js'); ?>"></script>
+<?php echo $__env->make('layout.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

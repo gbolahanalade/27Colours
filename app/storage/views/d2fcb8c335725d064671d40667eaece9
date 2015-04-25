@@ -1,0 +1,391 @@
+    <?php $__env->startSection('header'); ?>
+        <title>Songs | 27Colours</title>
+         <!-- navigation -->
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="<?php echo action('HomeController@index'); ?>">
+                                <i class="fa fa-home fa-fw fa-2x"></i>
+                                <span class="sr-only">(Current)</span>
+                            </a>
+                        </li>
+                        <li class="active"><a href="<?php echo action('SongController@index'); ?>"><i class=""></i> Songs</a></li>
+                        <li><a href="<?php echo action('VideoController@index'); ?>"><i class=""></i> Videos</a></li>
+                        <li><a href="<?php echo action('GalleryController@index'); ?>"><i class=""></i> Pictures</a></li>
+                        <li><a href="<?php echo action('TalentController@index'); ?>"><i class=""></i> Talents</a></li>
+                    </ul>
+    <?php $__env->stopSection(); ?>
+    <?php $__env->startSection('content'); ?>
+    <!-- posts -->
+    <div id="section-3a" class="featured-posts">
+        <div class="container">
+          <div class="row margin05">
+              <div class="col-md-9">
+                <h3 class="text-center">Featured</h3>
+                <div class="featured-tab">
+                    <ul class="nav nav-pills nav-justified">
+                        <li class="active"><a href="#afrobeat" data-toggle="tab">Afrobeat</a></li>
+                        <li><a href="#hiphop" data-toggle="tab">Hiphop</a></li>
+                        <li><a href="#rnb" role="tab" data-toggle="tab">R&B</a></li>
+                        <li><a href="#gospel" role="tab" data-toggle="tab">Gospel</a></li>
+                        <li><a href="#highlife" role="tab" data-toggle="tab">Highlife</a></li>
+                        <li><a href="#others" role="tab" data-toggle="tab">Others</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <!-- featured songs -->
+
+                        <!-- afrobeats -->
+                        <div class="tab-pane fade active in" id="afrobeat">
+                            <!-- Errors, Alerts -->
+                            <?php if(Session::get('errors')): ?>
+                                <p class="alert alert-error alert-danger fade in" role="alert"><a>
+                                <?php echo e(Session::get('errors')); ?></a></p>
+                            <?php endif; ?>
+                            <?php if(Session::get('notices')): ?>
+                                <p class="alert alert-info fade in" role="alert"><a>
+                                <?php echo e(Session::get('notices')); ?></a></p>
+                            <?php endif; ?>
+                            <?php if($afrobeats->isEmpty()): ?>
+                                <p class="text-center alert alert-info"  role="alert"> There are no Afrobeats songs!</p>
+                            <?php else: ?>
+                            <!-- Fetch Songs -->
+                            <?php foreach($afrobeats as $afrobeat): ?>
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <div class="featured-post">
+                                            <figure>
+                                                <?php echo HTML::image($afrobeat->image, $afrobeat->title, array('class'=>'img-responsive')); ?>
+
+                                                <div class="rating">
+                                                <ul class="list-inline rating-stars">
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star-half-o"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                                                </ul>
+                                                </div> <!-- end .rating -->
+
+                                              <figcaption>
+                                                <div class="post-view">
+                                                  <a href="<?php echo action('SongController@showSong', array('id'=> $afrobeat->id)); ?>"><i class="fa fa-play-circle fa-5x pulse2"></i></a>
+                                                </div>
+                                              </figcaption>
+                                            </figure>
+                                            <h4 class="post-title"><?php echo HTML::linkAction('SongController@showSong', $afrobeat->title, array($afrobeat->id), array('class'=>'post-title')); ?></h4>
+                                            <p class="post-uploader">
+                                                <i class="fa fa-user fa-fw"></i>
+                                                <?php echo HTML::linkAction('ProfileController@show', $afrobeat->user->username, array('id'=>$afrobeat->user->id),
+                                                array('class'=>'post-uploader')); ?>
+
+                                            </p>  
+                                            <ul class="post-util list-inline">
+                                                <li><i class="fa fa-comments"></i> 20 </li>
+                                                <li><i class="fa fa-heart"></i> 20 </li>
+                                                <li><i class="fa fa-clock-o"></i> <?php echo $afrobeat->timeago; ?></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            <?php endforeach; ?>
+                            <?php endif; ?> 
+                            <br>
+                            <!-- pagination -->
+                        </div>
+                        <!-- hiphop -->
+                        <div class="tab-pane fade in" id="hiphop">
+                            <!-- Errors, Alerts -->
+                            <?php if(Session::get('errors')): ?>
+                                <p class="alert alert-error alert-danger fade in" role="alert"><a>
+                                <?php echo e(Session::get('errors')); ?></a></p>
+                            <?php endif; ?>
+                            <?php if(Session::get('notices')): ?>
+                                <p class="alert alert-info fade in" role="alert"><a>
+                                <?php echo e(Session::get('notices')); ?></a></p>
+                            <?php endif; ?>
+                            <?php if($hips->isEmpty()): ?>
+                                <p class="text-center alert alert-info"  role="alert"> There are no Hiphop songs!</p>
+                            <?php else: ?>
+                            <!-- Fetch Songs -->
+                            <?php foreach($hips as $hiphop): ?>
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <div class="featured-post">
+                                            <figure>
+                                                <?php echo HTML::image($hiphop->image, $hiphop->title, array('class'=>'img-responsive')); ?>
+
+                                                <div class="rating">
+                                                <ul class="list-inline rating-stars">
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star-half-o"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                                                </ul>
+                                                </div> <!-- end .rating -->
+
+                                              <figcaption>
+                                                <div class="post-view">
+                                                  <a href="<?php echo action('SongController@showSong', array('id'=> $hiphop->id)); ?>"><i class="fa fa-play-circle fa-5x pulse2"></i></a>
+                                                </div>
+                                              </figcaption>
+                                            </figure>
+                                            <h4 class="post-title"><?php echo HTML::linkAction('SongController@showSong', $hiphop->title, array($hiphop->id), array('class'=>'post-title')); ?></h4>
+                                            <p class="post-uploader">
+                                                <i class="fa fa-user fa-fw"></i>
+                                                <?php echo HTML::linkAction('ProfileController@show', $hiphop->user->username, array('id'=>$hiphop->user->id),
+                                                array('class'=>'post-uploader')); ?>
+
+                                            </p>  
+                                            <ul class="post-util list-inline">
+                                                <li><i class="fa fa-comments"></i> 20 </li>
+                                                <li><i class="fa fa-heart"></i> 20 </li>
+                                                <li><i class="fa fa-clock-o"></i> <?php echo $hiphop->timeago; ?></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            <?php endforeach; ?>
+                            <?php endif; ?> 
+                            <br>
+                            <!-- pagination -->
+                        </div>
+                        <!-- rnb -->
+                        <div class="tab-pane fade in" id="rnb">
+                            <!-- Errors, Alerts -->
+                            <?php if(Session::get('errors')): ?>
+                                <p class="alert alert-error alert-danger fade in" role="alert"><a>
+                                <?php echo e(Session::get('errors')); ?></a></p>
+                            <?php endif; ?>
+                            <?php if(Session::get('notices')): ?>
+                                <p class="alert alert-info fade in" role="alert"><a>
+                                <?php echo e(Session::get('notices')); ?></a></p>
+                            <?php endif; ?>
+                            <?php if($rnbs->isEmpty()): ?>
+                                <p class="text-center alert alert-info"  role="alert"> There are no Hiphop songs!</p>
+                            <?php else: ?>
+                            <!-- Fetch Songs -->
+                            <?php foreach($rnbs as $rnb): ?>
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <div class="featured-post">
+                                            <figure>
+                                                <?php echo HTML::image($rnb->image, $rnb->title, array('class'=>'img-responsive')); ?>
+
+                                                <div class="rating">
+                                                <ul class="list-inline rating-stars">
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star-half-o"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                                                </ul>
+                                                </div> <!-- end .rating -->
+
+                                              <figcaption>
+                                                <div class="post-view">
+                                                  <a href="<?php echo action('SongController@showSong', array('id'=> $rnb->id)); ?>"><i class="fa fa-play-circle fa-5x pulse2"></i></a>
+                                                </div>
+                                              </figcaption>
+                                            </figure>
+                                            <h4 class="post-title"><?php echo HTML::linkAction('SongController@showSong', $rnb->title, array($rnb->id), array('class'=>'post-title')); ?></h4>
+                                            <p class="post-uploader">
+                                                <i class="fa fa-user fa-fw"></i>
+                                                <?php echo HTML::linkAction('ProfileController@show', $rnb->user->username, array('id'=>$rnb->user->id),
+                                                array('class'=>'post-uploader')); ?>
+
+                                            </p>  
+                                            <ul class="post-util list-inline">
+                                                <li><i class="fa fa-comments"></i> 20 </li>
+                                                <li><i class="fa fa-heart"></i> 20 </li>
+                                                <li><i class="fa fa-clock-o"></i> <?php echo $rnb->timeago; ?></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            <?php endforeach; ?>
+                            <?php endif; ?> 
+                            <br>
+                            <!-- pagination -->
+                        </div>
+                        <!-- gospels -->
+                        <div class="tab-pane fade in" id="gospel">
+                            <!-- Errors, Alerts -->
+                            <?php if(Session::get('errors')): ?>
+                                <p class="alert alert-error alert-danger fade in" role="alert"><a>
+                                <?php echo e(Session::get('errors')); ?></a></p>
+                            <?php endif; ?>
+                            <?php if(Session::get('notices')): ?>
+                                <p class="alert alert-info fade in" role="alert"><a>
+                                <?php echo e(Session::get('notices')); ?></a></p>
+                            <?php endif; ?>
+                            <?php if($rnbs->isEmpty()): ?>
+                                <p class="text-center alert alert-info"  role="alert"> There are no Hiphop songs!</p>
+                            <?php else: ?>
+                            <!-- Fetch Songs -->
+                            <?php foreach($gospels as $gospel): ?>
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <div class="featured-post">
+                                            <figure>
+                                                <?php echo HTML::image($gospel->image, $gospel->title, array('class'=>'img-responsive')); ?>
+
+                                                <div class="rating">
+                                                <ul class="list-inline rating-stars">
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star-half-o"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                                                </ul>
+                                                </div> <!-- end .rating -->
+
+                                              <figcaption>
+                                                <div class="post-view">
+                                                  <a href="<?php echo action('SongController@showSong', array('id'=> $gospel->id)); ?>"><i class="fa fa-play-circle fa-5x pulse2"></i></a>
+                                                </div>
+                                              </figcaption>
+                                            </figure>
+                                            <h4 class="post-title"><?php echo HTML::linkAction('SongController@showSong', $gospel->title, array($gospel->id), array('class'=>'post-title')); ?></h4>
+                                            <p class="post-uploader">
+                                                <i class="fa fa-user fa-fw"></i>
+                                                <?php echo HTML::linkAction('ProfileController@show', $gospel->user->username, array('id'=>$gospel->user->id),
+                                                array('class'=>'post-uploader')); ?>
+
+                                            </p>  
+                                            <ul class="post-util list-inline">
+                                                <li><i class="fa fa-comments"></i> 20 </li>
+                                                <li><i class="fa fa-heart"></i> 20 </li>
+                                                <li><i class="fa fa-clock-o"></i> <?php echo $gospel->timeago; ?></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            <?php endforeach; ?>
+                            <?php endif; ?> 
+                            <br>
+                            <!-- pagination -->
+                        </div>
+                        <!-- highlifes -->
+                        <div class="tab-pane fade in" id="highlife">
+                            <!-- Errors, Alerts -->
+                            <?php if(Session::get('errors')): ?>
+                                <p class="alert alert-error alert-danger fade in" role="alert"><a>
+                                <?php echo e(Session::get('errors')); ?></a></p>
+                            <?php endif; ?>
+                            <?php if(Session::get('notices')): ?>
+                                <p class="alert alert-info fade in" role="alert"><a>
+                                <?php echo e(Session::get('notices')); ?></a></p>
+                            <?php endif; ?>
+                            <?php if($highlifes->isEmpty()): ?>
+                                <p class="text-center alert alert-info"  role="alert"> There are no Highlife songs!</p>
+                            <?php else: ?>
+                            <!-- Fetch Songs -->
+                            <?php foreach($highlifes as $highlife): ?>
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <div class="featured-post">
+                                            <figure>
+                                                <?php echo HTML::image($highlife->image, $highlife->title, array('class'=>'img-responsive')); ?>
+
+                                                <div class="rating">
+                                                <ul class="list-inline rating-stars">
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star-half-o"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                                                </ul>
+                                                </div> <!-- end .rating -->
+
+                                              <figcaption>
+                                                <div class="post-view">
+                                                  <a href="<?php echo action('SongController@showSong', array('id'=> $highlife->id)); ?>"><i class="fa fa-play-circle fa-5x pulse2"></i></a>
+                                                </div>
+                                              </figcaption>
+                                            </figure>
+                                            <h4 class="post-title"><?php echo HTML::linkAction('SongController@showSong', $highlife->title, array($highlife->id), array('class'=>'post-title')); ?></h4>
+                                            <p class="post-uploader">
+                                                <i class="fa fa-user fa-fw"></i>
+                                                <?php echo HTML::linkAction('ProfileController@show', $highlife->user->username, array('id'=>$highlife->user->id),
+                                                array('class'=>'post-uploader')); ?>
+
+                                            </p>  
+                                            <ul class="post-util list-inline">
+                                                <li><i class="fa fa-comments"></i> 20 </li>
+                                                <li><i class="fa fa-heart"></i> 20 </li>
+                                                <li><i class="fa fa-clock-o"></i> <?php echo $highlife->timeago; ?></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            <?php endforeach; ?>
+                            <?php endif; ?> 
+                            <br>
+                            <!-- pagination -->
+                        </div>
+                        <!-- others -->
+                        <div class="tab-pane fade in" id="others">
+                            <!-- Errors, Alerts -->
+                            <?php if(Session::get('errors')): ?>
+                                <p class="alert alert-error alert-danger fade in" role="alert"><a>
+                                <?php echo e(Session::get('errors')); ?></a></p>
+                            <?php endif; ?>
+                            <?php if(Session::get('notices')): ?>
+                                <p class="alert alert-info fade in" role="alert"><a>
+                                <?php echo e(Session::get('notices')); ?></a></p>
+                            <?php endif; ?>
+                            <?php if($highlifes->isEmpty()): ?>
+                                <p class="text-center alert alert-info"  role="alert"> There are no Highlife songs!</p>
+                            <?php else: ?>
+                            <!-- Fetch Songs -->
+                            <?php foreach($others as $other): ?>
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <div class="featured-post">
+                                            <figure>
+                                                <?php echo HTML::image($other->image, $other->title, array('class'=>'img-responsive')); ?>
+
+                                                <div class="rating">
+                                                <ul class="list-inline rating-stars">
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star-half-o"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                                                </ul>
+                                                </div> <!-- end .rating -->
+
+                                              <figcaption>
+                                                <div class="post-view">
+                                                  <a href="<?php echo action('SongController@showSong', array('id'=> $other->id)); ?>"><i class="fa fa-play-circle fa-5x pulse2"></i></a>
+                                                </div>
+                                              </figcaption>
+                                            </figure>
+                                            <h4 class="post-title"><?php echo HTML::linkAction('SongController@showSong', $other->title, array($other->id), array('class'=>'post-title')); ?></h4>
+                                            <p class="post-uploader">
+                                                <i class="fa fa-user fa-fw"></i>
+                                                <?php echo HTML::linkAction('ProfileController@show', $other->user->username, array('id'=>$other->user->id),
+                                                array('class'=>'post-uploader')); ?>
+
+                                            </p>  
+                                            <ul class="post-util list-inline">
+                                                <li><i class="fa fa-comments"></i> 20 </li>
+                                                <li><i class="fa fa-heart"></i> 20 </li>
+                                                <li><i class="fa fa-clock-o"></i> <?php echo $other->timeago; ?></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            <?php endforeach; ?>
+                            <?php endif; ?> 
+                            <br>
+                            <!-- pagination -->
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-3 sidebar">
+                  <?php echo $__env->make('song.song-sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+              </div>
+          </div> <!-- ./ row ends -->            
+        </div>
+    </div>
+    <?php $__env->stopSection(); ?>
+    <!-- FOOTER - IN MASTER BLADE -->
+</div> <!-- ./ wrapper ends -->
+
+<?php $__env->startSection('scripts2'); ?>
+    <!-- jQuery Version 1.11.0 -->
+    <script src="<?php echo asset('js/jquery-2.1.3.min.js'); ?>"></script>
+    <script src="<?php echo asset('js/jquery-ui.js'); ?>"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<?php echo asset('js/bootstrap/bootstrap.min.js'); ?>"></script>
+<?php echo $__env->make('layout.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
