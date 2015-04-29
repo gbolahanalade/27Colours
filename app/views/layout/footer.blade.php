@@ -42,10 +42,10 @@
                           <h3>Keep In Touch</h3>
 
                           <ul class="list-inline">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li class="padding-0"><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li class="padding-0"><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li class="padding-0"><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li class="padding-0"><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
                           </ul>
                     </div>
                 </div>
@@ -61,7 +61,18 @@
                 </script>,
                 27Colours - All Rights Reserved. 
             </p>
-            <p class="pull-right">Powered by  <a href="#">CuriouzMind Tech</a></p>
+            <p class="developer pull-right">Powered by  <a class="developer-logo" href="#">CuriouzMind Tech</a></p>
         </div>
        </div> <!-- ./ container -->
     </footer>
+
+    <!-- FB PLUGIN JAVASCRIPT CODE -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=221153544678812";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <!-- ./ FB PLUGIN -->

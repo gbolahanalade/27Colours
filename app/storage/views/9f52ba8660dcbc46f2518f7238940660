@@ -18,10 +18,10 @@
     <!-- SITE DESCRIPTION -->
     <div id="section-1" class="site-desc">
         <ul class="list-inline socials-connect text-center">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+            <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
         </ul>
         <h2 class="text-center">Become a <span class="strong">Celebrity!</span> <br><small>Upload your 
             <i class="fa fa-music"></i> Songs | 
@@ -120,11 +120,10 @@
                     <li class="active"><a href="#songs" data-toggle="tab"><i class="fa fa-music"></i> Songs</a></li>
                     <li><a href="#videos" data-toggle="tab"><i class="fa fa-video-camera"></i> Videos</a></li>
                     <li><a href="#pictures" data-toggle="tab"><i class="fa fa-camera"></i> Pictures</a></li>
-                    <li><a href="#talents" data-toggle="tab"><i class="fa fa-star"></i> Talents</a></li>
                 </ul>
                 <div class="tab-content col-md-9 padding-2px">
                     <!-- featured songs -->
-                    <div class="tab-pane fade active in songs" id="songs">
+                    <div class="tab-pane fade active in" id="songs">
                         <!-- Errors, Alerts -->
                         <?php if(Session::get('errors')): ?>
                             <p class="alert alert-error alert-danger fade in" role="alert"><a>
@@ -139,25 +138,25 @@
                         <?php else: ?>
                         <!-- Fetch Songs -->
                         <?php foreach($songs as $song): ?>
-                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 padding-0">
                                     <div class="featured-post">
                                         <figure>
                                             <?php echo HTML::image($song->image, $song->title, array('class'=>'img-responsive')); ?>
 
                                             <div class="rating">
-                                            <ul class="list-inline rating-stars">
+                                            <ul class="list-inline rating-stars hidden">
                                               <li><a href="#"><i class="fa fa-star"></i></a></li>
                                               <li><a href="#"><i class="fa fa-star"></i></a></li>
                                               <li><a href="#"><i class="fa fa-star"></i></a></li>
                                               <li><a href="#"><i class="fa fa-star-half-o"></i></a></li>
                                               <li><a href="#"><i class="fa fa-star-o"></i></a></li>
                                             </ul>
-                                            <p class="post-label"><i class="fa fa-tag"></i> <?php echo $song->genre; ?></p>
+                                            <p class="post-label"><i class="fa fa-music"></i> <?php echo $song->genre; ?></p>
                                             </div> <!-- end .rating -->
 
                                           <figcaption>
                                             <div class="post-view">
-                                              <a href="<?php echo action('SongController@showSong', array('id'=> $song->id)); ?>"><i class="fa fa-play-circle fa-5x pulse2"></i></a>
+                                              <a href="<?php echo action('SongController@showSong', array('id'=> $song->id)); ?>"><i class="fa fa-music fa-4x pulse2"></i></a>
                                             </div>
                                           </figcaption>
                                         </figure>
@@ -197,25 +196,25 @@
                         <?php else: ?>
                         <!-- Fetch Videos -->
                         <?php foreach($videos as $video): ?>
-                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 padding-0">
                                     <div class="featured-post">
                                         <figure>
                                             <?php echo HTML::image($video->image, $video->title, array('class'=>'img-responsive')); ?>
 
                                             <div class="rating">
-                                            <ul class="list-inline rating-stars">
+                                            <ul class="list-inline rating-stars hidden">
                                               <li><a href="#"><i class="fa fa-star"></i></a></li>
                                               <li><a href="#"><i class="fa fa-star"></i></a></li>
                                               <li><a href="#"><i class="fa fa-star"></i></a></li>
                                               <li><a href="#"><i class="fa fa-star-half-o"></i></a></li>
                                               <li><a href="#"><i class="fa fa-star-o"></i></a></li>
                                             </ul>
-                                            <p class="post-label"><i class="fa fa-tag"></i> <?php echo $video->genre; ?></p>
+                                            <p class="post-label"><i class="fa fa-video-camera"></i> <?php echo $video->genre; ?></p>
                                             </div> <!-- end .rating -->
 
                                           <figcaption>
                                             <div class="post-view">
-                                              <a href="<?php echo action('VideoController@showVideo', array('id'=> $video->id)); ?>"><i class="fa fa-play-circle fa-5x pulse2"></i></a>
+                                              <a href="<?php echo action('VideoController@showVideo', array('id'=> $video->id)); ?>"><i class="fa fa-play-circle fa-4x pulse2"></i></a>
                                             </div>
                                           </figcaption>
                                         </figure>
@@ -254,13 +253,13 @@
                         <?php else: ?>
                         <!-- Fetch Videos -->
                         <?php foreach($galleries as $gallery): ?>
-                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 padding-0">
                                     <div class="featured-post">
                                         <figure>
                                             <?php echo HTML::image($gallery->image, $gallery->title, array('class'=>'img-responsive')); ?>
 
                                             <div class="rating">
-                                            <ul class="list-inline rating-stars">
+                                            <ul class="list-inline rating-stars hidden">
                                               <li><a href="#"><i class="fa fa-star"></i></a></li>
                                               <li><a href="#"><i class="fa fa-star"></i></a></li>
                                               <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -272,7 +271,7 @@
 
                                           <figcaption>
                                             <div class="post-view">
-                                              <a href="<?php echo action('GalleryController@showGallery', array('id'=> $gallery->id)); ?>"><i class="fa fa-play-circle fa-5x pulse2"></i></a>
+                                              <a href="<?php echo action('GalleryController@showGallery', array('id'=> $gallery->id)); ?>"><i class="fa fa-camera fa-4x pulse2"></i></a>
                                             </div>
                                           </figcaption>
                                         </figure>

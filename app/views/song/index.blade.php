@@ -15,15 +15,36 @@
                         <li><a href="{{ action('TalentController@index')}}"><i class=""></i> Talents</a></li>
                     </ul>
     @stop
+    <!-- breadcrumbs -->
+    <div class="breadcrumb">
+      <div class="row padding-5">
+       <div class="container padding-0">
+        <div class="btn-group btn-breadcrumb pull-left">
+            <a href="{{ action('HomeController@index')}}" class="btn btn-default"><i class="fa fa-home"></i></a>
+            <span href="#" class="btn btn-danger-reverse">Songs <i class="fa fa-music"></i></span>
+        </div>
+        <div class="search-bar pull-right">
+                        <form class="navbar-form" action="">
+                            <div class="form-group">
+                            <div class="input-group">
+                            <input type="text" class="form-control search-bar-event" name="Search" id='nav-search' placeholder="Search">
+                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                            </div>
+                            </div>
+                        </form>
+        </div>
+       </div>
+      </div>
+    </div>
     @section('content')
     <!-- posts -->
     <div id="section-3a" class="featured-posts">
-        <div class="container">
+        <div class="container padding-0">
           <div class="row margin05">
-              <div class="col-md-9">
-                <h3 class="text-center">Featured</h3>
+              <div class="col-md-9 col-xs-12 padding-0">
+                <h3 class="text-center well">Song Categories</h3>
                 <div class="featured-tab">
-                    <ul class="nav nav-pills nav-justified">
+                    <ul class="nav nav-pills nav-left">
                         <li class="active"><a href="#afrobeat" data-toggle="tab">Afrobeat</a></li>
                         <li><a href="#hiphop" data-toggle="tab">Hiphop</a></li>
                         <li><a href="#rnb" role="tab" data-toggle="tab">R&B</a></li>
@@ -50,12 +71,12 @@
                             @else
                             <!-- Fetch Songs -->
                             @foreach ($afrobeats as $afrobeat)
-                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 padding-0">
                                         <div class="featured-post">
                                             <figure>
                                                 {{ HTML::image($afrobeat->image, $afrobeat->title, array('class'=>'img-responsive')) }}
                                                 <div class="rating">
-                                                <ul class="list-inline rating-stars">
+                                                <ul class="list-inline rating-stars hidden">
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -66,7 +87,7 @@
 
                                               <figcaption>
                                                 <div class="post-view">
-                                                  <a href="{{ action('SongController@showSong', array('id'=> $afrobeat->id))}}"><i class="fa fa-play-circle fa-5x pulse2"></i></a>
+                                                  <a href="{{ action('SongController@showSong', array('id'=> $afrobeat->id))}}"><i class="fa fa-music fa-4x pulse2"></i></a>
                                                 </div>
                                               </figcaption>
                                             </figure>
@@ -104,12 +125,12 @@
                             @else
                             <!-- Fetch Songs -->
                             @foreach ($hips as $hiphop)
-                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 padding-0">
                                         <div class="featured-post">
                                             <figure>
                                                 {{ HTML::image($hiphop->image, $hiphop->title, array('class'=>'img-responsive')) }}
                                                 <div class="rating">
-                                                <ul class="list-inline rating-stars">
+                                                <ul class="list-inline rating-stars hidden">
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -120,7 +141,7 @@
 
                                               <figcaption>
                                                 <div class="post-view">
-                                                  <a href="{{ action('SongController@showSong', array('id'=> $hiphop->id))}}"><i class="fa fa-play-circle fa-5x pulse2"></i></a>
+                                                  <a href="{{ action('SongController@showSong', array('id'=> $hiphop->id))}}"><i class="fa fa-music fa-4x pulse2"></i></a>
                                                 </div>
                                               </figcaption>
                                             </figure>
@@ -158,12 +179,12 @@
                             @else
                             <!-- Fetch Songs -->
                             @foreach ($rnbs as $rnb)
-                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 padding-0">
                                         <div class="featured-post">
                                             <figure>
                                                 {{ HTML::image($rnb->image, $rnb->title, array('class'=>'img-responsive')) }}
                                                 <div class="rating">
-                                                <ul class="list-inline rating-stars">
+                                                <ul class="list-inline rating-stars hidden">
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -174,7 +195,7 @@
 
                                               <figcaption>
                                                 <div class="post-view">
-                                                  <a href="{{ action('SongController@showSong', array('id'=> $rnb->id))}}"><i class="fa fa-play-circle fa-5x pulse2"></i></a>
+                                                  <a href="{{ action('SongController@showSong', array('id'=> $rnb->id))}}"><i class="fa fa-music fa-4x pulse2"></i></a>
                                                 </div>
                                               </figcaption>
                                             </figure>
@@ -212,12 +233,12 @@
                             @else
                             <!-- Fetch Songs -->
                             @foreach ($gospels as $gospel)
-                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 padding-0">
                                         <div class="featured-post">
                                             <figure>
                                                 {{ HTML::image($gospel->image, $gospel->title, array('class'=>'img-responsive')) }}
                                                 <div class="rating">
-                                                <ul class="list-inline rating-stars">
+                                                <ul class="list-inline rating-stars hidden">
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -228,7 +249,7 @@
 
                                               <figcaption>
                                                 <div class="post-view">
-                                                  <a href="{{ action('SongController@showSong', array('id'=> $gospel->id))}}"><i class="fa fa-play-circle fa-5x pulse2"></i></a>
+                                                  <a href="{{ action('SongController@showSong', array('id'=> $gospel->id))}}"><i class="fa fa-music fa-5x pulse2"></i></a>
                                                 </div>
                                               </figcaption>
                                             </figure>
@@ -266,12 +287,12 @@
                             @else
                             <!-- Fetch Songs -->
                             @foreach ($highlifes as $highlife)
-                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 padding-0">
                                         <div class="featured-post">
                                             <figure>
                                                 {{ HTML::image($highlife->image, $highlife->title, array('class'=>'img-responsive')) }}
                                                 <div class="rating">
-                                                <ul class="list-inline rating-stars">
+                                                <ul class="list-inline rating-stars hidden">
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -282,7 +303,7 @@
 
                                               <figcaption>
                                                 <div class="post-view">
-                                                  <a href="{{ action('SongController@showSong', array('id'=> $highlife->id))}}"><i class="fa fa-play-circle fa-5x pulse2"></i></a>
+                                                  <a href="{{ action('SongController@showSong', array('id'=> $highlife->id))}}"><i class="fa fa-music fa-4x pulse2"></i></a>
                                                 </div>
                                               </figcaption>
                                             </figure>
@@ -320,12 +341,12 @@
                             @else
                             <!-- Fetch Songs -->
                             @foreach ($others as $other)
-                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 padding-0">
                                         <div class="featured-post">
                                             <figure>
                                                 {{ HTML::image($other->image, $other->title, array('class'=>'img-responsive')) }}
                                                 <div class="rating">
-                                                <ul class="list-inline rating-stars">
+                                                <ul class="list-inline rating-stars hidden">
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -336,7 +357,7 @@
 
                                               <figcaption>
                                                 <div class="post-view">
-                                                  <a href="{{ action('SongController@showSong', array('id'=> $other->id))}}"><i class="fa fa-play-circle fa-5x pulse2"></i></a>
+                                                  <a href="{{ action('SongController@showSong', array('id'=> $other->id))}}"><i class="fa fa-music fa-4x pulse2"></i></a>
                                                 </div>
                                               </figcaption>
                                             </figure>
@@ -361,7 +382,7 @@
                     </div>
                 </div>
               </div>
-              <div class="col-md-3 sidebar">
+              <div class="col-md-3 col-xs-12 padding-0 sidebar">
                   @include('song.song-sidebar')
               </div>
           </div> <!-- ./ row ends -->            
