@@ -248,7 +248,7 @@
                         @if ($galleries->isEmpty())
                             <p class="text-center alert alert-info"  role="alert"> There are no Pictures!</p>
                         @else
-                        <!-- Fetch Videos -->
+                        <!-- Fetch Pictures -->
                         @foreach ($galleries as $gallery)
                                 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 padding-0">
                                     <div class="featured-post">
@@ -312,7 +312,6 @@
     @stop
     <!-- FOOTER - IN MASTER BLADE -->
 </div> <!-- ./ wrapper ends -->
-
 @section('scripts2')
     <!-- jQuery Version 1.11.0 -->
     <script src="{{ asset('js/jquery-2.1.3.min.js') }}"></script>
@@ -339,3 +338,6 @@
         });
     </script>
 @stop
+
+</body>
+</html>

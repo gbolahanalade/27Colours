@@ -1,54 +1,60 @@
-@section('side') 
-                <aside class="col-md-5">
-                    <!-- Home_300x250_1 -->
+                        <!-- Celebrity Endorsements -->
                         <div class="embed-responsive embed-responsive-16by9" style="margin: 0 0 5px 0; min-height:320px;">
                             <iframe class="embed-responsive-item" width="100%" height="250" src="//www.youtube.com/embed/xzRXKlgq7zs?rel=0" frameborder="0" allowfullscreen></iframe>
                         </div>
-                        <div class="sidebar-widget">
-                        <div class="fb-like-box" data-href="https://www.facebook.com/27colours" data-width="400" data-colorscheme="light" 
-                            data-show-faces="true" data-header="true" data-stream="false" data-show-border="true" style="width:250px; min-height:300px;">
-                        </div>
+                        <!-- Facebook Like box -->
+                        <div class="fb-widget">
+                          <div class="fb-page" data-href="https://www.facebook.com/27colours" 
+                            data-width="250" data-height="250" data-hide-cover="false" 
+                            data-show-facepile="true" data-show-posts="false">
+                            <div class="fb-xfbml-parse-ignore">
+                            <blockquote cite="https://www.facebook.com/27colours">
+                            <a href="https://www.facebook.com/27colours">27 colours on Facebook</a></blockquote>
+                            </div>
+                          </div>
                         </div> 
                         <!-- Featured Uploads-->
                         <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="text-center">Recent Photos</h3>
+                            <h3 class="panel-title text-center">Featured Pictures</h3>
                         </div>
                         <div class="panel-body">
-                            <div class="">
-                            @foreach ($recentGalleries as $gallery)
-                            <ul class="list-inline post-item">
-                                <li class="col-md-9 col-xs-7">
-                                    <ul class="list-inline">
-                                    <li class="col-md-3 pull-left">
-                                      {{ HTML::image($gallery->image, $gallery->title, array('class'=>'img-responsive thumbnail','width'=>'50px','height'=>'50px')) }}                                       
-                                    </li>
-                                    <li class="col-md-9 pull-left post-desc">                                    
-                                        <h3>{{ HTML::linkAction('GalleryController@showGallery', $gallery->caption, array($gallery->id), array('class'=>'post-title'))}}</h3>
-                                        <h5>
+                            <!-- Fetch Pictures -->
+                        @foreach ($recentGalleries as $gallery)
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 padding-0">
+                                    <div class="featured-post">
+                                        <figure>
+                                            {{ HTML::image($gallery->image, $gallery->title, array('class'=>'img-responsive')) }}
+                                            <div class="rating">
+                                            <ul class="list-inline rating-stars hidden">
+                                              <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                              <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                              <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                              <li><a href="#"><i class="fa fa-star-half-o"></i></a></li>
+                                              <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                                            </ul>
+                                            <p class="post-label"><i class="fa fa-tag"></i> {{$gallery->cat}}</p>
+                                            </div> <!-- end .rating -->
+
+                                          <figcaption>
+                                            <div class="post-view">
+                                              <a href="{{ action('GalleryController@showGallery', array('id'=> $gallery->id))}}"><i class="fa fa-camera fa-4x pulse2"></i></a>
+                                            </div>
+                                          </figcaption>
+                                        </figure>
+                                        <h4 class="post-title">{{ HTML::linkAction('GalleryController@showGallery', $gallery->caption, array('id'=> $gallery->id), array('class'=>'post-title'))}}</h4>
+                                        <p class="post-uploader">
                                             <i class="fa fa-user fa-fw"></i>
                                             {{ HTML::linkAction('ProfileController@show', $gallery->user->username, array('id'=>$gallery->user->id),
-                                        array('class'=>'post-uploader'))}}
-                                        </h5>
-                                        <p class="post-desc hidden-xs"> {{$gallery->description}}</p>
-                                    </li>
-                                    </ul>
-                                </li>
-                                <li class="col-md-3 col-xs-5 post-util">
-                                    <ul class="row list-inline">
-                                        <li class="col-md-4 play-icon text-right">
-                                            {{ HTML::linkAction('GalleryController@showGallery', '', 
-                                            array($gallery->id), array('class'=>'fa fa-play-circle fa-3x'))}}
-                                        </li>
-                                        <li class="col-md-8 text-left">
-                                            <h6 class="">{{$gallery->timeago}}</h6>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            @endforeach
-                            </div>
+                                            array('class'=>'post-uploader'))}}
+                                        </p>  
+                                        <ul class="post-util list-inline">
+                                            <li><i class="fa fa-comments"></i> 20 </li>
+                                            <li><i class="fa fa-heart"></i> 20 </li>
+                                            <li><i class="fa fa-clock-o"></i> {{$gallery->timeago}}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                        @endforeach
                         </div>
                         </div>
-                </aside>
-                @stop

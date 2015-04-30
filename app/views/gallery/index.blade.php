@@ -15,13 +15,34 @@
                         <li><a href="{{ action('TalentController@index')}}"><i class=""></i> Talents</a></li>
                     </ul>
     @stop
+    <!-- breadcrumbs -->
+    <div class="breadcrumb">
+      <div class="row padding-5">
+       <div class="container padding-0">
+        <div class="btn-group btn-breadcrumb pull-left">
+            <a href="{{ action('HomeController@index')}}" class="btn btn-default"><i class="fa fa-home"></i></a>
+            <span href="#" class="btn btn-danger-reverse">Pictures <i class="fa fa-camera"></i></span>
+        </div>
+        <div class="search-bar pull-right">
+                        <form class="navbar-form" action="">
+                            <div class="form-group">
+                            <div class="input-group">
+                            <input type="text" class="form-control search-bar-event" name="Search" id='nav-search' placeholder="Search">
+                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                            </div>
+                            </div>
+                        </form>
+        </div>
+       </div>
+      </div>
+    </div>
     @section('content')
         <!-- posts -->
     <div id="section-3a" class="featured-posts">
-        <div class="container">
-          <div class="row">
-              <div class="col-md-9">
-                <h3 class="text-center"><i class="fa fa-camera"></i> Pictures</h3>
+        <div class="container padding-0">
+          <div class="row margin05">
+              <div class="col-md-9 col-xs-12 padding-0">
+                <h3 class="text-center well"><i class="fa fa-camera"></i> Pictures Categories</h3>
                 <div class="featured-tab">
                     <ul class="nav nav-pills nav-justified">
                         <li class="active"><a href="#modelling" role="tab" data-toggle="tab">Modelling</a></li>
@@ -46,11 +67,11 @@
                             @else
                             <!-- Fetch Songs -->
                             @foreach ($modelling as $model)
-                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 padding-0">
                                         <div class="featured-post">
                                             <figure>
                                                 {{ HTML::image($model->image, $model->title, array('class'=>'img-responsive')) }}
-                                                <div class="rating">
+                                                <div class="rating hidden">
                                                 <ul class="list-inline rating-stars">
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -62,7 +83,7 @@
 
                                               <figcaption>
                                                 <div class="post-view">
-                                                  <a href="{{ action('GalleryController@showGallery', array('id'=> $model->id))}}"><i class="fa fa-camera fa-5x pulse2"></i></a>
+                                                  <a href="{{ action('GalleryController@showGallery', array('id'=> $model->id))}}"><i class="fa fa-camera fa-4x pulse2"></i></a>
                                                 </div>
                                               </figcaption>
                                             </figure>
@@ -100,11 +121,11 @@
                             @else
                             <!-- Fetch Songs -->
                             @foreach ($others as $other)
-                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 padding-0">
                                         <div class="featured-post">
                                             <figure>
                                                 {{ HTML::image($other->image, $other->title, array('class'=>'img-responsive')) }}
-                                                <div class="rating">
+                                                <div class="rating hidden">
                                                 <ul class="list-inline rating-stars">
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -116,7 +137,7 @@
 
                                               <figcaption>
                                                 <div class="post-view">
-                                                  <a href="{{ action('GalleryController@showGallery', array('id'=> $other->id))}}"><i class="fa fa-camera fa-5x pulse2"></i></a>
+                                                  <a href="{{ action('GalleryController@showGallery', array('id'=> $other->id))}}"><i class="fa fa-camera fa-4x pulse2"></i></a>
                                                 </div>
                                               </figcaption>
                                             </figure>
@@ -141,7 +162,7 @@
                     </div>
                 </div>
               </div>
-              <div class="col-md-3 sidebar">
+              <div class="col-md-3 col-xs-12 padding-0 sidebar">
                   @include('gallery.gallery-sidebar')
               </div>
           </div> <!-- ./ row ends -->            

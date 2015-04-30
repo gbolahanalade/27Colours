@@ -14,7 +14,7 @@
                         <li><a href="{{ action('GalleryController@index')}}"><i class=""></i> Pictures</a></li>
                         <li><a href="{{ action('TalentController@index')}}"><i class=""></i> Talents</a></li>
                     </ul>
-    @stop
+    </header>
     <!-- breadcrumbs -->
     <div class="breadcrumb">
       <div class="row padding-5">
@@ -36,6 +36,7 @@
        </div>
       </div>
     </div>
+    @stop
     @section('content')
     <!-- posts -->
     <div id="section-3a" class="featured-posts">
@@ -75,7 +76,7 @@
                                         <div class="featured-post">
                                             <figure>
                                                 {{ HTML::image($afrobeat->image, $afrobeat->title, array('class'=>'img-responsive')) }}
-                                                <div class="rating">
+                                                <div class="rating hidden">
                                                 <ul class="list-inline rating-stars hidden">
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -129,7 +130,7 @@
                                         <div class="featured-post">
                                             <figure>
                                                 {{ HTML::image($hiphop->image, $hiphop->title, array('class'=>'img-responsive')) }}
-                                                <div class="rating">
+                                                <div class="rating hidden">
                                                 <ul class="list-inline rating-stars hidden">
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -183,7 +184,7 @@
                                         <div class="featured-post">
                                             <figure>
                                                 {{ HTML::image($rnb->image, $rnb->title, array('class'=>'img-responsive')) }}
-                                                <div class="rating">
+                                                <div class="rating hidden">
                                                 <ul class="list-inline rating-stars hidden">
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -237,7 +238,7 @@
                                         <div class="featured-post">
                                             <figure>
                                                 {{ HTML::image($gospel->image, $gospel->title, array('class'=>'img-responsive')) }}
-                                                <div class="rating">
+                                                <div class="rating hidden">
                                                 <ul class="list-inline rating-stars hidden">
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -291,7 +292,7 @@
                                         <div class="featured-post">
                                             <figure>
                                                 {{ HTML::image($highlife->image, $highlife->title, array('class'=>'img-responsive')) }}
-                                                <div class="rating">
+                                                <div class="rating hidden">
                                                 <ul class="list-inline rating-stars hidden">
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -345,7 +346,7 @@
                                         <div class="featured-post">
                                             <figure>
                                                 {{ HTML::image($other->image, $other->title, array('class'=>'img-responsive')) }}
-                                                <div class="rating">
+                                                <div class="rating hidden">
                                                 <ul class="list-inline rating-stars hidden">
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                   <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -398,3 +399,7 @@
     <script src="{{ asset('js/jquery-ui.js') }}"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
+
+
+</body>
+</html>
