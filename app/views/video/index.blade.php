@@ -14,8 +14,8 @@
                         <li><a href="{{ action('GalleryController@index')}}"><i class=""></i> Pictures</a></li>
                         <li><a href="{{ action('TalentController@index')}}"><i class=""></i> Talents</a></li>
                     </ul>
-    @stop
-    @section('content')
+    
+    </header>
     <!-- breadcrumbs -->
     <div class="breadcrumb">
       <div class="row">
@@ -37,6 +37,9 @@
        </div>
       </div>
     </div>
+    @stop
+    @section('content')
+    
     <!-- posts -->
     <div id="section-3a" class="featured-posts">
         <div class="container padding-0">

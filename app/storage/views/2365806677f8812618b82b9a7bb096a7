@@ -13,8 +13,8 @@
                         <li><a href="<?php echo action('GalleryController@index'); ?>"><i class=""></i> Pictures</a></li>
                         <li><a href="<?php echo action('TalentController@index'); ?>"><i class=""></i> Talents</a></li>
                     </ul>
-    <?php $__env->stopSection(); ?>
-    <?php $__env->startSection('content'); ?>
+    
+    </header>
     <!-- breadcrumbs -->
     <div class="breadcrumb">
       <div class="row">
@@ -36,6 +36,9 @@
        </div>
       </div>
     </div>
+    <?php $__env->stopSection(); ?>
+    <?php $__env->startSection('content'); ?>
+    
     <!-- posts -->
     <div id="section-3a" class="featured-posts">
         <div class="container padding-0">

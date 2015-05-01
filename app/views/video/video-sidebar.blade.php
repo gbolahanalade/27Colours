@@ -42,7 +42,7 @@
                                             </div>
                                           </figcaption>
                                         </figure>
-                                        <h4 class="post-title">{{ HTML::linkAction('VideoController@showVideo', $video->title, array('id'=> $video->id), array('class'=>'post-title'))}}</h4>
+                                        <h4 class="post-title">{{ HTML::linkAction('VideoController@showVideo', $video->title, array('id'=> $video->id), array('class'=>''))}}</h4>
                                         <p class="post-uploader">
                                             <i class="fa fa-user fa-fw"></i>
                                             {{ HTML::linkAction('ProfileController@show', $video->user->username, array('id'=>$video->user->id),

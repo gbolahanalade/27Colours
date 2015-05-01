@@ -298,7 +298,7 @@
                                                 </div>
                                               </figcaption>
                                             </figure>
-                                            <h4 class="post-title">{{ HTML::linkAction('SongController@showSong', $song->title, array('id'=> $song->id), array('class'=>'post-title'))}}</h4>
+                                            <h4 class="post-title">{{ HTML::linkAction('SongController@showSong', $song->title, array('id'=> $song->id), array('class'=>''))}}</h4>
                                             <p class="post-uploader">
                                                 <i class="fa fa-user fa-fw"></i>
                                                 {{ HTML::linkAction('ProfileController@show', $song->user->username, array('id'=>$song->user->id),
@@ -337,7 +337,7 @@
                                                     </div>
                                                   </figcaption>
                                                 </figure>
-                                                <h4 class="post-title">{{ HTML::linkAction('VideoController@showVideo', $video->title, array('id'=> $video->id), array('class'=>'post-title'))}}</h4>
+                                                <h4 class="post-title">{{ HTML::linkAction('VideoController@showVideo', $video->title, array('id'=> $video->id), array('class'=>''))}}</h4>
                                                 <p class="post-uploader">
                                                     <i class="fa fa-user fa-fw"></i>
                                                     {{ HTML::linkAction('ProfileController@show', $video->user->username, array('id'=>$video->user->id),
@@ -376,7 +376,7 @@
                                                         </div>
                                                       </figcaption>
                                                     </figure>
-                                                    <h4 class="post-title">{{ HTML::linkAction('GalleryController@showGallery', $gallery->caption, array('id'=> $gallery->id), array('class'=>'post-title'))}}</h4>
+                                                    <h4 class="post-title">{{ HTML::linkAction('GalleryController@showGallery', $gallery->caption, array('id'=> $gallery->id), array('class'=>''))}}</h4>
                                                     <p class="post-uploader">
                                                         <i class="fa fa-user fa-fw"></i>
                                                         {{ HTML::linkAction('ProfileController@show', $gallery->user->username, array('id'=>$gallery->user->id),

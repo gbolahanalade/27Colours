@@ -20,7 +20,7 @@
                         </div>
                         <div class="panel-body">
                             <!-- Fetch Songs -->
-                        @foreach ($songs as $song)
+                        @foreach ($recentSongs as $song)
                                 <div class="col-xs-6 padding-0">
                                     <div class="featured-post">
                                         <figure>
