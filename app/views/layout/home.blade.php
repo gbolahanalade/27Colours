@@ -99,15 +99,15 @@
         <div class="row">
             <div class="col-md-5 col-sm-5">
                 <h4 class="text-center">New Talent ?</h4>
-                <a href="" class="btn btn-default btn-block"><i class="fa fa-plus-square"></i> 
+                <a href="{{ action('UsersController@getCreate')}}" class="btn btn-default btn-block"><i class="fa fa-plus-square"></i> 
                     Create a Profile <i class="fa fa-user"></i></a>
             </div>
             <div class="divider col-md-2"><h2>OR</h2></div>
             <div class="col-md-5 col-sm-5">
                 <h4 class="text-center">Fans &amp; Talent hunters ?</h4>
-                <a href="" class="btn btn-default btn-block">Listen to Songs <i class="fa fa-music"></i></a>
-                <a href="" class="btn btn-default btn-block">Watch Videos <i class="fa fa-video-camera"></i></a>
-                <a href="" class="btn btn-default btn-block">View Pictures <i class="fa fa-camera"></i></a>
+                <a href="{{ action('SongController@index')}}" class="btn btn-default btn-block">Listen to Songs <i class="fa fa-music"></i></a>
+                <a href="{{ action('VideoController@index')}}" class="btn btn-default btn-block">Watch Videos <i class="fa fa-video-camera"></i></a>
+                <a href="{{ action('GalleryController@index')}}" class="btn btn-default btn-block">View Pictures <i class="fa fa-camera"></i></a>
             </div>
         </div>
         </div> <!-- ./ container ends -->

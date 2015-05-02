@@ -87,7 +87,7 @@
                                                 </div>
                                               </figcaption>
                                             </figure>
-                                            <h4 class="post-title"><?php echo HTML::linkAction('GalleryController@showGallery', $model->caption, array($model->id), array('class'=>'post-title')); ?></h4>
+                                            <h4 class="post-title"><?php echo HTML::linkAction('GalleryController@showGallery', $model->caption, array($model->id), array('class'=>'')); ?></h4>
                                             <p class="post-uploader">
                                                 <i class="fa fa-user fa-fw"></i>
                                                 <?php echo HTML::linkAction('ProfileController@show', $model->user->username, array('id'=>$model->user->id),
@@ -143,7 +143,7 @@
                                                 </div>
                                               </figcaption>
                                             </figure>
-                                            <h4 class="post-title"><?php echo HTML::linkAction('GalleryController@showGallery', $other->caption, array($other->id), array('class'=>'post-title')); ?></h4>
+                                            <h4 class="post-title"><?php echo HTML::linkAction('GalleryController@showGallery', $other->caption, array($other->id), array('class'=>'')); ?></h4>
                                             <p class="post-uploader">
                                                 <i class="fa fa-user fa-fw"></i>
                                                 <?php echo HTML::linkAction('ProfileController@show', $other->user->username, array('id'=>$other->user->id),
