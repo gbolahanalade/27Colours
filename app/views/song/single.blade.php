@@ -53,7 +53,7 @@
                             </div>
                             @elseif ( isset($song->song))
                                 <div id="wrapper">
-                                <audio class="audioplayer" preload="auto" controls style="width: 100%; margin-top:5px;">
+                                <audio class="audioplayer" preload="auto" controls style="width: 100%; height:50px; margin-top:5px;">
                                     <source src="{{asset($song->song)}}"> <!-- .mp3 -->
                                     <source src="{{asset($song->song)}}"> <!-- .ogg -->
                                     <source src="{{asset($song->song)}}"> <!-- .wav -->

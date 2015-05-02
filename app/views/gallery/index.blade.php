@@ -41,7 +41,7 @@
     <div id="section-3a" class="featured-posts">
         <div class="container padding-0">
           <div class="row margin05">
-              <div class="col-md-9 col-xs-12 padding-0">
+              <div class="col-md-9 col-xs-12 padding-2px">
                 <h3 class="text-center well"><i class="fa fa-camera"></i> Pictures Categories</h3>
                 <div class="featured-tab">
                     <ul class="nav nav-pills nav-justified">
@@ -87,7 +87,7 @@
                                                 </div>
                                               </figcaption>
                                             </figure>
-                                            <h4 class="post-title">{{ HTML::linkAction('GalleryController@showGallery', $model->caption, array($model->id), array('class'=>'post-title'))}}</h4>
+                                            <h4 class="post-title">{{ HTML::linkAction('GalleryController@showGallery', $model->caption, array($model->id), array('class'=>''))}}</h4>
                                             <p class="post-uploader">
                                                 <i class="fa fa-user fa-fw"></i>
                                                 {{ HTML::linkAction('ProfileController@show', $model->user->username, array('id'=>$model->user->id),
@@ -141,7 +141,7 @@
                                                 </div>
                                               </figcaption>
                                             </figure>
-                                            <h4 class="post-title">{{ HTML::linkAction('GalleryController@showGallery', $other->caption, array($other->id), array('class'=>'post-title'))}}</h4>
+                                            <h4 class="post-title">{{ HTML::linkAction('GalleryController@showGallery', $other->caption, array($other->id), array('class'=>''))}}</h4>
                                             <p class="post-uploader">
                                                 <i class="fa fa-user fa-fw"></i>
                                                 {{ HTML::linkAction('ProfileController@show', $other->user->username, array('id'=>$other->user->id),

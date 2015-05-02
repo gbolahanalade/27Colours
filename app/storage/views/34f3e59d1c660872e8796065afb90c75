@@ -40,10 +40,10 @@
         <div id="section-3a" class="featured-posts">
         <div class="container padding-0">
           <div class="row margin05">
-              <div class="col-md-9 col-xs-12 padding-0">
-                <h3 class="text-center well"><i class="fa fa-star"></i> Talents Categories</h3>
+              <div class="col-md-9 col-xs-12 padding-2px">
+                <h3 class="text-center well"><i class="fa fa-star"></i> Talent Categories</h3>
                 <div class="featured-tab">
-                    <ul class="nav nav-pills nav-left">
+                    <ul class="nav nav-pills nav-justified">
                         <li class="active"><a href="#modelling" role="tab" data-toggle="tab">Models</a></li>
                         <li><a href="#singing" role="tab" data-toggle="tab">Singers</a></li>
                         <li><a href="#dancing" role="tab" data-toggle="tab">Dancers</a></li>
@@ -89,10 +89,10 @@
                                                 </div>
                                               </figcaption>
                                             </figure>
-                                            <p class="post-uploader">
+                                            <p class="post-uploader userinfo-name">
                                                 <i class="fa fa-user fa-fw"></i>
                                                 <?php echo HTML::linkAction('ProfileController@show', $model->username, array('id'=>$model->id),
-                                                array('class'=>'post-uploader')); ?>
+                                                array('class'=>'')); ?>
 
                                             </p>  
                                             <ul class="post-util list-inline">
@@ -144,10 +144,10 @@
                                                 </div>
                                               </figcaption>
                                             </figure>
-                                            <p class="post-uploader">
+                                            <p class="post-uploader userinfo-name">
                                                 <i class="fa fa-user fa-fw"></i>
                                                 <?php echo HTML::linkAction('ProfileController@show', $musician->username, array('id'=>$musician->id),
-                                                array('class'=>'post-uploader')); ?>
+                                                array('class'=>'')); ?>
 
                                             </p>  
                                             <ul class="post-util list-inline">
@@ -199,10 +199,10 @@
                                                 </div>
                                               </figcaption>
                                             </figure>
-                                            <p class="post-uploader">
+                                            <p class="post-uploader userinfo-name">
                                                 <i class="fa fa-user fa-fw"></i>
                                                 <?php echo HTML::linkAction('ProfileController@show', $dancer->username, array('id'=>$dancer->id),
-                                                array('class'=>'post-uploader')); ?>
+                                                array('class'=>'')); ?>
 
                                             </p>  
                                             <ul class="post-util list-inline">
@@ -254,10 +254,10 @@
                                                 </div>
                                               </figcaption>
                                             </figure>
-                                            <p class="post-uploader">
+                                            <p class="post-uploader userinfo-name">
                                                 <i class="fa fa-user fa-fw"></i>
                                                 <?php echo HTML::linkAction('ProfileController@show', $comedian->username, array('id'=>$comedian->id),
-                                                array('class'=>'post-uploader')); ?>
+                                                array('class'=>'')); ?>
 
                                             </p>  
                                             <ul class="post-util list-inline">
@@ -323,11 +323,11 @@
                                             </div>
                                           </figcaption>
                                         </figure>
-                                        <h4 class="post-title"><?php echo HTML::linkAction('SongController@showSong', $song->title, array('id'=> $song->id), array('class'=>'post-title')); ?></h4>
-                                        <p class="post-uploader">
+                                        <h4 class="post-title"><?php echo HTML::linkAction('SongController@showSong', $song->title, array('id'=> $song->id), array('class'=>'')); ?></h4>
+                                        <p class="post-uploader userinfo-details">
                                             <i class="fa fa-user fa-fw"></i>
                                             <?php echo HTML::linkAction('ProfileController@show', $song->user->username, array('id'=>$song->user->id),
-                                            array('class'=>'post-uploader')); ?>
+                                            array('class'=>'')); ?>
 
                                         </p>  
                                         <ul class="post-util list-inline">

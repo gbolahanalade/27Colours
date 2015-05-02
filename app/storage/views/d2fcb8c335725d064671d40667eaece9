@@ -41,7 +41,7 @@
     <div id="section-3a" class="featured-posts">
         <div class="container padding-0">
           <div class="row margin05">
-              <div class="col-md-9 col-xs-12 padding-0">
+              <div class="col-md-9 col-xs-12 padding-2px">
                 <h3 class="text-center well">Song Categories</h3>
                 <div class="featured-tab">
                     <ul class="nav nav-pills nav-left">

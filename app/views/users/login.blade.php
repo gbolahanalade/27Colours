@@ -16,14 +16,15 @@
                     </ul>
 @stop
 @section('content')
-    <div id="login" class="bckgrnd-white login">
+    <div id="login" class="bckgrnd-white">
         <div class="container-fluid">
             <div class="col-md-5 center-block">
+              <div class="login">
                 <form role="form" method="POST" action="{{{ URL::to('/users/login') }}}" accept-charset="UTF-8">
                     <input type="hidden" class="form-control" name="_token" value="{{{ Session::getToken() }}}">
                     <div class="text-center">
                         <header>
-                            <h2 class="margin0">Sign in</h2>
+                            <h3 class="margin0 section-header">Sign in</h3>
                         </header>
                         <div class="list-inline text-center margin-bottom-10 hidden">
                             <a class="btn btn-default rounded" data-original-title="Facebook"
@@ -71,11 +72,12 @@
                     @endif  
                     <div class="form-group">
                       <div class="col-sm-12">
-                        <button type="submit" class="btn btn-default">
+                        <button type="submit" class="btn btn-primary">
                         {{{ Lang::get('confide::confide.login.submit') }}}</button>
                       </div>
                     </div> 
                 </form>
+              </div> <!-- ./ login ends -->
             </div>
         </div>
     </div>

@@ -43,8 +43,8 @@
     <div id="section-3a" class="featured-posts">
         <div class="container padding-0">
           <div class="row margin05">
-              <div class="col-md-9 col-xs-12 padding-0">
-                <h3 class="text-center well"><i class="fa fa-video-camera"></i> Videos Categories</h3>
+              <div class="col-md-9 col-xs-12 padding-2px">
+                <h3 class="text-center well"><i class="fa fa-video-camera"></i> Video Categories</h3>
                 <div class="featured-tab">
                     <ul class="nav nav-pills nav-justified">
                         <li class="active"><a href="#music" role="tab" data-toggle="tab">Music</a></li>
@@ -91,7 +91,7 @@
                                                 </div>
                                               </figcaption>
                                             </figure>
-                                            <h4 class="post-title"><?php echo HTML::linkAction('VideoController@showVideo', $music->title, array($music->id), array('class'=>'post-title')); ?></h4>
+                                            <h4 class="post-title"><?php echo HTML::linkAction('VideoController@showVideo', $music->title, array($music->id), array('class'=>'')); ?></h4>
                                             <p class="post-uploader">
                                                 <i class="fa fa-user fa-fw"></i>
                                                 <?php echo HTML::linkAction('ProfileController@show', $music->user->username, array('id'=>$music->user->id),
@@ -147,7 +147,7 @@
                                                 </div>
                                               </figcaption>
                                             </figure>
-                                            <h4 class="post-title"><?php echo HTML::linkAction('VideoController@showVideo', $dance->title, array($dance->id), array('class'=>'post-title')); ?></h4>
+                                            <h4 class="post-title"><?php echo HTML::linkAction('VideoController@showVideo', $dance->title, array($dance->id), array('class'=>'')); ?></h4>
                                             <p class="post-uploader">
                                                 <i class="fa fa-user fa-fw"></i>
                                                 <?php echo HTML::linkAction('ProfileController@show', $dance->user->username, array('id'=>$dance->user->id),
@@ -203,7 +203,7 @@
                                                 </div>
                                               </figcaption>
                                             </figure>
-                                            <h4 class="post-title"><?php echo HTML::linkAction('VideoController@showVideo', $comedy->title, array($comedy->id), array('class'=>'post-title')); ?></h4>
+                                            <h4 class="post-title"><?php echo HTML::linkAction('VideoController@showVideo', $comedy->title, array($comedy->id), array('class'=>'')); ?></h4>
                                             <p class="post-uploader">
                                                 <i class="fa fa-user fa-fw"></i>
                                                 <?php echo HTML::linkAction('ProfileController@show', $comedy->user->username, array('id'=>$comedy->user->id),

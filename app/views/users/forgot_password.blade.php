@@ -16,20 +16,21 @@
                     </ul>
 @stop
 @section('content')
-<div id="login" class="bckgrnd-white login">
+<div id="login" class="bckgrnd-white">
   <div class="container-fluid">
     <div class="col-md-5 center-block">
-    <form id="login" class="login center-block" method="POST" action="{{ URL::to('/users/forgot_password') }}" accept-charset="UTF-8">
+    <div class="fpassword">
+      <form class="center-block" method="POST" action="{{ URL::to('/users/forgot_password') }}" accept-charset="UTF-8">
         <input type="hidden" name="_token" value="{{{ Session::getToken() }}}">       
         <div class="text-center">
-            <h1 class="">Forgot Password</h1>
+            <h1 class="section-header">Forgot Password</h1>
         </div>
             <div class="form-group">
-                <div class="input-group">
+                <div class="">
                     <input required class="form-control" placeholder="{{{ Lang::get('confide::confide.e_mail') }}}" type="text" name="email" id="email" value="{{{ Input::old('email') }}}">
-                    <span class="input-group-addon">
-                        <input type="submit" value="{{{ Lang::get('confide::confide.forgot.submit') }}}">
-                    </span>
+                    <p>
+                        <input style="margin-top:10px;" class="form-control btn btn-primary" type="submit" value="{{{ Lang::get('confide::confide.forgot.submit') }}}">
+                    </p>
                 </div>
             </div>
             @if (Session::get('error'))
@@ -39,7 +40,8 @@
             @if (Session::get('notice'))
                 <div class="alert alert-info" role="alert">{{{ Session::get('notice') }}}</div>
             @endif
-    </form>
+      </form>
+    </div>
     </div>
   </div>
 </div>

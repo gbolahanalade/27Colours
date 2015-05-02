@@ -17,12 +17,12 @@
     @stop
     @section('content') 
       <div id="edit-profile" class="">
-        <div class="container-fluid">
-            <div class="col-md-7 center-block" style="float:none;">
-              <form class="form-upload" id="upload" enctype="multipart/form-data" method="post" action="/song/create">
+        <div class="container-fluid padding-2px">
+            <div class="col-md-7 center-block padding-0" style="float:none;">
+              <form class="form-upload margin-0" id="upload" enctype="multipart/form-data" method="post" action="/song/create">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                      <h2 class="panel-title text-center page-title">Add Video</h2>
+                      <h2 class="panel-title text-center page-title section-header">Add Video</h2>
                       @if (Session::get('errors'))
                       <div class="alert alert-warning alert-dismissible fade in" role="alert">
                         <a name="error">{{{ Session::get('errors') }}}</a></div>
@@ -36,7 +36,7 @@
                         <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-desktop"></i></span>
-                            <input type="file" id="song" name="song" accept="audio/*" class="btn btn-default btn-block">
+                            <input type="file" id="video" name="video" accept="video/*" class="btn btn-default btn-block">
                         </div>
                         <p class="help-block">*Maximum of 10 uploads | *Only Mp4/WebM/Ogg formats allowed</p>
                         </div>
@@ -47,9 +47,9 @@
                             <span class="input-group-addon"><i class="fa fa-youtube"></i></span>
                             <input type="text" class="form-control" id="youtube" name="youtube" placeholder="Youtube Video"/>  
                         </div>
-                        <p class="help-block">*Copy the "Embed" link of you video from Youtube and paste here. <code class="hidden-xs hidden-sm"> e.g 
+                        <p class="help-block">*Copy the "Embed" link of you video from Youtube and paste here. <small class="hidden-xs hidden-sm"> e.g 
                             'iframe width="560" height="315" src="https://www.youtube.com/embed/xzRXKlgq7zs" 
-                            frameborder="0" allowfullscreen...'</code>
+                            frameborder="0" allowfullscreen...'</small>
                         </p>
                         </div>
                         
@@ -119,14 +119,15 @@
     <!-- Plugins -->
     <script src="{{ asset('plugins/jasny-bootstrap/js/jasny-bootstrap.min.js') }}"></script>
     <script>
-        $(document).ready(function() {
-            $('#upload').on('submit', function(){
-                var form = $(this);
-                var formdata = false;
-                if (window.FormData){
+        //wait for the DOM to be loaded
+        $('#upload').on('submit', function(){
+            var form = $(this);
+            var formdata = false;
+            if (window.FormData){
                 formdata = new FormData(form[0]);
-                }
-            });
+            }
+        });
+
             var formAction = form.attr('action');
             $.ajax({
                 url         : '/video/create',
@@ -139,6 +140,5 @@
                     // Callback code
                 }
             });
-        });
     </script>
 @stop
