@@ -3,10 +3,8 @@ class SongController extends BaseController
 {
  
     /* get functions */
-    
     public function index()
     {
-
         $songs =    Song::orderBy('id','desc')->take(8)->get();
         $afrobeats= Song::where('genre', '=', 'Afrobeat')->take(3)->orderBy('id','desc')->get();
         $highlifes= Song::where('genre', '=', 'highlife')->take(3)->orderBy('id','desc')->get();
@@ -23,6 +21,7 @@ class SongController extends BaseController
 
     public function showSong(Song $song)
     {
+         
         $id= $song->id;
         $genre= $song->genre;
         $reSongs =  Song::where('genre', '=', $genre)->take(5)->orderBy('id','desc')->get();

@@ -12,17 +12,17 @@
                         <li><a href="{{ action('SongController@index')}}"><i class=""></i> Songs</a></li>
                         <li><a href="{{ action('VideoController@index')}}"><i class=""></i> Videos</a></li>
                         <li><a href="{{ action('GalleryController@index')}}"><i class=""></i> Pictures</a></li>
-                        <li class="active"><a href="{{ action('TalentController@index')}}"><i class=""></i> Talents</a></li>
+                        <li><a href="{{ action('TalentController@index')}}"><i class=""></i> Talents</a></li>
                     </ul>
     @stop
     @section('content') 
       <div id="edit-profile" class="">
-        <div class="container-fluid">
-            <div class="col-md-7 center-block" style="float:none;">
-              <form class="form-upload" id="upload" enctype="multipart/form-data" method="post" action="/song/create">
+        <div class="container-fluid padding-2px">
+            <div class="col-md-7 center-block padding-2px" style="float:none;">
+              <form class="form-upload margin-0" id="upload" enctype="multipart/form-data" method="post" action="/song/create">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                      <h2 class="panel-title text-center page-title">Add Song</h2>
+                      <h2 class="panel-title text-center page-title section-header">Add Song</h2>
                       @if (Session::get('errors'))
                       <div class="alert alert-warning alert-dismissible fade in" role="alert">
                         <a name="error">{{{ Session::get('errors') }}}</a></div>
@@ -47,9 +47,9 @@
                             <span class="input-group-addon"><i class="fa fa-soundcloud"></i></span>
                             <input type="text" class="form-control" id="soundcloud" name="soundcloud" placeholder="Add Soundcloud Url"/>  
                         </div>
-                        <p class="help-block">*Copy the "Embed" link of you track from Soundcloud and paste here. <code class="hidden-xs hidden-sm"> e.g 
+                        <p class="help-block">*Copy the "Embed" link of your track from Soundcloud and paste here. <small class="hidden-xs hidden-sm"> e.g 
                             'iframe width="100%" height="450" scrolling="no" frameborder="no" 
-                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks...'</code>
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks...'</small>
                         </p>
                         </div>
                         
@@ -63,14 +63,16 @@
                         <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-">Song Title</i></span>
-                            {{Form::text('title', '', array('class'=>'form-control', 'required'=>''))}}
+                            {{Form::text('title', '', array('class'=>'form-control', 'required'=>'', 'id'=>'title'))}}
+                            <!-- <div class="alert alert-info alert-dismissible fade in text-center" id="errTitle" role="alert"></div> -->
+
                         </div>
                         <p class="help-block">*Required</p>
                         </div>
                         <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-">Description</i></span>
-                            {{Form::textarea('description', '', array('class'=>'form-control', 'rows'=>'3'))}}
+                            {{Form::textarea('description', '', array('class'=>'form-control', 'rows'=>'3', 'id'=>'description'))}}
                         </div>
                         </div>
                         <div class="form-group">

@@ -14,6 +14,28 @@
                         <li><a href="{{ action('GalleryController@index')}}"><i class=""></i> Pictures</a></li>
                         <li class="active"><a href="{{ action('TalentController@index')}}"><i class=""></i> Talents</a></li>
                     </ul>
+    </header>
+    <!-- breadcrumbs -->
+    <div class="breadcrumb">
+      <div class="row padding-5">
+       <div class="container padding-0">
+        <div class="btn-group btn-breadcrumb pull-left">
+            <a href="{{ action('HomeController@index')}}" class="btn btn-default"><i class="fa fa-home"></i></a>
+            <span href="#" class="btn btn-danger-reverse">Talents <i class="fa fa-star"></i></span>
+        </div>
+        <div class="search-bar pull-right">
+                        <form class="navbar-form" action="">
+                            <div class="form-group">
+                            <div class="input-group">
+                            <input type="text" class="form-control search-bar-event" name="Search" id='nav-search' placeholder="Search">
+                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                            </div>
+                            </div>
+                        </form>
+        </div>
+       </div>
+      </div>
+    </div>
     @stop
     @section('content') 
     <div class="container featured-posts"> 
@@ -36,11 +58,11 @@
                 </div>
             </div>
             <div class="col-md-6 padding-2px">
-                <h3 class="username">{{$user->username}}</h3> 
-                <h6>Real Name: <span class="uploader">{{ $user->full_name }}</span></h6>
-                <h6>Talent: <span class="talents">{{$user->talents}}</span></h6>
-                <hr class="hr5">                                 
-                <span class="description">{{$user->tagline}}</span> 
+                <h3 class="userinfo-name info-overflow">{{$user->username}}</h3> 
+                <p class="userinfo-details info-overflow">Real Name: <span class="">{{ $user->full_name }}</span></p>
+                <p class="userinfo-details info-overflow">Talent: <span class="">{{$user->talents}}</span></p>
+                <!-- <hr class="hr5">                                 
+                <span class="description userinfo-details">{{$user->tagline}}</span>  -->
             </div>
           </div>
         </div>
@@ -74,11 +96,11 @@
                         @else
                         <!-- Fetch Songs -->
                         @foreach ($songs as $song)
-                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 padding-0">
                                     <div class="featured-post">
                                         <figure>
                                             {{ HTML::image($song->image, $song->title, array('class'=>'img-responsive')) }}
-                                            <div class="rating">
+                                            <div class="rating hidden">
                                             <ul class="list-inline rating-stars">
                                               <li><a href="#"><i class="fa fa-star"></i></a></li>
                                               <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -86,20 +108,20 @@
                                               <li><a href="#"><i class="fa fa-star-half-o"></i></a></li>
                                               <li><a href="#"><i class="fa fa-star-o"></i></a></li>
                                             </ul>
-                                            <p class="post-label"><i class="fa fa-tag"></i> {{$song->genre}}</p>
+                                            <!-- <p class="post-label"><i class="fa fa-tag"></i> {{$song->genre}}</p> -->
                                             </div> <!-- end .rating -->
 
                                           <figcaption>
                                             <div class="post-view">
-                                              <a href="{{ action('SongController@showSong', array('id'=> $song->id))}}"><i class="fa fa-play-circle fa-5x pulse2"></i></a>
+                                              <a href="{{ action('SongController@showSong', array('id'=> $song->id))}}"><i class="fa fa-music fa-4x pulse2"></i></a>
                                             </div>
                                           </figcaption>
                                         </figure>
-                                        <h4 class="post-title">{{ HTML::linkAction('SongController@showSong', $song->title, array('id'=> $song->id), array('class'=>'post-title'))}}</h4>
+                                        <h4 class="userinfo-details post-title">{{ HTML::linkAction('SongController@showSong', $song->title, array('id'=> $song->id), array('class'=>''))}}</h4>
                                         <p class="post-uploader">
                                             <i class="fa fa-user fa-fw"></i>
                                             {{ HTML::linkAction('ProfileController@show', $song->user->username, array('id'=>$song->user->id),
-                                            array('class'=>'post-uploader'))}}
+                                            array('class'=>'post-uploader userinfo-details'))}}
                                         </p>  
                                         <ul class="post-util list-inline">
                                             <li><i class="fa fa-comments"></i> 20 </li>
@@ -129,11 +151,11 @@
                         @else
                         <!-- Fetch Videos -->
                         @foreach ($videos as $video)
-                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 padding-0">
                                     <div class="featured-post">
                                         <figure>
                                             {{ HTML::image($video->image, $video->title, array('class'=>'img-responsive')) }}
-                                            <div class="rating">
+                                            <div class="rating hidden">
                                             <ul class="list-inline rating-stars">
                                               <li><a href="#"><i class="fa fa-star"></i></a></li>
                                               <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -141,20 +163,20 @@
                                               <li><a href="#"><i class="fa fa-star-half-o"></i></a></li>
                                               <li><a href="#"><i class="fa fa-star-o"></i></a></li>
                                             </ul>
-                                            <p class="post-label"><i class="fa fa-tag"></i> {{$video->genre}}</p>
+                                            <!-- <p class="post-label"><i class="fa fa-tag"></i> {{$video->genre}}</p> -->
                                             </div> <!-- end .rating -->
 
                                           <figcaption>
                                             <div class="post-view">
-                                              <a href="{{ action('VideoController@showVideo', array('id'=> $video->id))}}"><i class="fa fa-play-circle fa-5x pulse2"></i></a>
+                                              <a href="{{ action('VideoController@showVideo', array('id'=> $video->id))}}"><i class="fa fa-play-circle fa-4x pulse2"></i></a>
                                             </div>
                                           </figcaption>
                                         </figure>
-                                        <h4 class="post-title">{{ HTML::linkAction('VideoController@showVideo', $video->title, array('id'=> $video->id), array('class'=>'post-title'))}}</h4>
+                                        <h4 class="post-title userinfo-details">{{ HTML::linkAction('VideoController@showVideo', $video->title, array('id'=> $video->id), array('class'=>''))}}</h4>
                                         <p class="post-uploader">
                                             <i class="fa fa-user fa-fw"></i>
                                             {{ HTML::linkAction('ProfileController@show', $video->user->username, array('id'=>$video->user->id),
-                                            array('class'=>'post-uploader'))}}
+                                            array('class'=>'post-uploader userinfo-details'))}}
                                         </p>  
                                         <ul class="post-util list-inline">
                                             <li><i class="fa fa-comments"></i> 20 </li>
@@ -184,11 +206,11 @@
                         @else
                         <!-- Fetch Videos -->
                         @foreach ($galleries as $gallery)
-                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 padding-0">
                                     <div class="featured-post">
                                         <figure>
                                             {{ HTML::image($gallery->image, $gallery->title, array('class'=>'img-responsive')) }}
-                                            <div class="rating">
+                                            <div class="rating hidden">
                                             <ul class="list-inline rating-stars">
                                               <li><a href="#"><i class="fa fa-star"></i></a></li>
                                               <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -196,20 +218,20 @@
                                               <li><a href="#"><i class="fa fa-star-half-o"></i></a></li>
                                               <li><a href="#"><i class="fa fa-star-o"></i></a></li>
                                             </ul>
-                                            <p class="post-label"><i class="fa fa-tag"></i> {{$gallery->cat}}</p>
+                                            <!-- <p class="post-label"><i class="fa fa-tag"></i> {{$gallery->cat}}</p> -->
                                             </div> <!-- end .rating -->
 
                                           <figcaption>
                                             <div class="post-view">
-                                              <a href="{{ action('GalleryController@showGallery', array('id'=> $gallery->id))}}"><i class="fa fa-camera fa-5x pulse2"></i></a>
+                                              <a href="{{ action('GalleryController@showGallery', array('id'=> $gallery->id))}}"><i class="fa fa-camera fa-4x pulse2"></i></a>
                                             </div>
                                           </figcaption>
                                         </figure>
-                                        <h4 class="post-title">{{ HTML::linkAction('GalleryController@showGallery', $gallery->caption, array('id'=> $gallery->id), array('class'=>'post-title'))}}</h4>
+                                        <h4 class="post-title userinfo-details">{{ HTML::linkAction('GalleryController@showGallery', $gallery->caption, array('id'=> $gallery->id), array('class'=>''))}}</h4>
                                         <p class="post-uploader">
                                             <i class="fa fa-user fa-fw"></i>
                                             {{ HTML::linkAction('ProfileController@show', $gallery->user->username, array('id'=>$gallery->user->id),
-                                            array('class'=>'post-uploader'))}}
+                                            array('class'=>'post-uploader userinfo-details'))}}
                                         </p>  
                                         <ul class="post-util list-inline">
                                             <li><i class="fa fa-comments"></i> 20 </li>
@@ -224,129 +246,153 @@
                         <!-- pagination -->
                         
                     </div>
-                </div>
+            </div>
         </div>
     </div> 
-    <div class="col-md-3">
-        @section('side') 
-                    <aside class="">
-                        <!-- Home_300x250_1 -->
+    <div class="col-md-3 col-xs-12 padding-5 sidebar">
+        <!-- Celebrity Endorsements -->
                         <div class="embed-responsive embed-responsive-16by9" style="margin: 0 0 5px 0; min-height:320px;">
                             <iframe class="embed-responsive-item" width="100%" height="250" src="//www.youtube.com/embed/xzRXKlgq7zs?rel=0" frameborder="0" allowfullscreen></iframe>
                         </div>
-                        <div class="sidebar-widget">
-                        <div class="fb-like-box" data-href="https://www.facebook.com/27colours" data-width="400" data-colorscheme="light" 
-                            data-show-faces="true" data-header="true" data-stream="false" data-show-border="true" style="width:250px; min-height:300px;">
-                        </div>
-                        </div> 
-                        
+                        <!-- Facebook Like box -->
+                        <div class="fb-widget">
+                          <div class="fb-page" data-href="https://www.facebook.com/27colours" 
+                            data-width="250" data-height="250" data-hide-cover="false" 
+                            data-show-facepile="true" data-show-posts="false">
+                            <div class="fb-xfbml-parse-ignore">
+                            <blockquote cite="https://www.facebook.com/27colours">
+                            <a href="https://www.facebook.com/27colours">27 colours</a></blockquote>
+                            </div>
+                          </div>
+                        </div>                         
                         <div class="recent-uploads panel panel-default">
-                            <div class="panel-heading">
-                            <h2 style="margin:0 !important;">Recent Entries</h2>
-                            <hr class="hr5">
-                            <ul class="nav nav-tabs nav-justified" role="tablist">
-                                <li class="active col-xs-4" style="border-bottom:none; padding: 0 !important;">
-                                    <a href="#rmusic" style="border:none; backround-color:transparent; border-bottom.active:1px solid #ff0000;" role="tab" data-toggle="tab">Music</a>
-                                </li>
-                                <li class=" col-xs-4"><a href="#rvideos" role="tab" data-toggle="tab">Videos</a></li>
-                                <li class=" col-xs-4"><a href="#rpictures" role="tab" data-toggle="tab">Pictures</a></li>
+                            <div class="panel-heading text-center">
+                            <h2 style="well">Featured Entries</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li class="active"><a href="#rsongs" data-toggle="tab"><i class="fa fa-music"></i> Songs</a></li>
+                                <li><a href="#rvideos" data-toggle="tab"><i class="fa fa-video-camera"></i> Videos</a></li>
+                                <li><a href="#rpictures" data-toggle="tab"><i class="fa fa-camera"></i> Pictures</a></li>
                             </ul>
                             </div>
                             <div class="tab-content panel-body">
-                                <div id="rmusic" class="tab-pane active fade in">
-                                    @foreach ($recentSongs as $song)
-                                    <ul class="list-inline post-item">
-                                        <li class="col-md-8 col-sm-8 col-xs-12">
-                                            <ul class="list-inline">
-                                            <li class="col-md-3 pull-left">
-                                              {{ HTML::image($song->image, $song->title, array('class'=>'img-responsive thumbnail','width'=>'50px','height'=>'50px')) }}                                       
-                                            </li>
-                                            <li class="col-md-9 pull-left post-desc">                                    
-                                                <h5>{{ HTML::linkAction('SongController@showSong', $song->title, array($song->id), array('class'=>'post-title'))}}</h5>
-                                                <h5><i class="fa fa-user fa-fw"></i>
-                                                {{ HTML::linkAction('ProfileController@show', $song->user->username, array('id'=>$song->user->id), array('class'=>'post-uploader'))}}</h5>
-                                                <p class="post-desc hidden-xs"> {{$song->description}}</p>
-                                            </li>
+                                <div id="rsongs" class="tab-pane active fade in">
+                                    @foreach ($songs as $song)
+                                    <div class="col-xs-6 padding-0">
+                                        <div class="featured-post">
+                                            <figure>
+                                                {{ HTML::image($song->image, $song->title, array('class'=>'img-responsive')) }}
+                                                <div class="rating">
+                                                <ul class="list-inline rating-stars hidden">
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star-half-o"></i></a></li>
+                                                  <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                                                </ul>
+                                                <p class="post-label"><i class="fa fa-music"></i> {{$song->genre}}</p>
+                                                </div> <!-- end .rating -->
+
+                                              <figcaption>
+                                                <div class="post-view">
+                                                  <a href="{{ action('SongController@showSong', array('id'=> $song->id))}}"><i class="fa fa-music fa-4x pulse2"></i></a>
+                                                </div>
+                                              </figcaption>
+                                            </figure>
+                                            <h4 class="post-title">{{ HTML::linkAction('SongController@showSong', $song->title, array('id'=> $song->id), array('class'=>''))}}</h4>
+                                            <p class="post-uploader">
+                                                <i class="fa fa-user fa-fw"></i>
+                                                {{ HTML::linkAction('ProfileController@show', $song->user->username, array('id'=>$song->user->id),
+                                                array('class'=>'post-uploader'))}}
+                                            </p>  
+                                            <ul class="post-util list-inline">
+                                                <li><i class="fa fa-comments"></i> 20 </li>
+                                                <li><i class="fa fa-heart"></i> 20 </li>
+                                                <li><i class="fa fa-clock-o"></i> {{$song->timeago}}</li>
                                             </ul>
-                                        </li>
-                                        <li class="col-md-4 col-sm-4 col-xs-12 post-util">
-                                            <ul class="list-inline">
-                                                <li class="col-md-4 play-icon text-right">
-                                                    {{ HTML::linkAction('SongController@showSong', '', array($song->id), array('class'=>'fa fa-play-circle fa-3x'))}}
-                                                </li>
-                                                <li class="col-md-8 text-left">
-                                                    <h6 class="">{{$song->timeago}}</h6>
-                                                    <!-- <h6>views 156 Views</h6> -->
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                        </div>
+                                    </div>
                                     @endforeach
                                 </div>
                                 <div id="rvideos" class="tab-pane fade in">
+                                    <!-- Fetch Videos -->
                                     @foreach ($recentVideos as $video)
-                                    <ul class="list-inline post-item">
-                                        <li class="col-md-8 col-sm-8 col-xs-12">
-                                            <ul class="list-inline">
-                                            <li class="col-md-3 pull-left">
-                                              {{ HTML::image($video->image, $video->title, array('class'=>'img-responsive thumbnail','width'=>'50px','height'=>'50px')) }}                                       
-                                            </li>
-                                            <li class="col-md-9 pull-left post-desc">                                    
-                                                <h5>{{ HTML::linkAction('VideoController@showVideo', $video->title, array($video->id), array('class'=>'post-title'))}}</h5>
-                                                <h5><i class="fa fa-user fa-fw"></i>
-                                                {{ HTML::linkAction('ProfileController@show', $video->user->username, array('id'=>$video->user->id), array('class'=>'post-uploader'))}}</h5>
-                                                <p class="post-desc hidden-xs"> {{$video->description}}</p>
-                                            </li>
-                                            </ul>
-                                        </li>
-                                        <li class="col-md-4 col-sm-4 col-xs-12 post-util">
-                                            <ul class="list-inline">
-                                                <li class="col-md-4 play-icon text-right">
-                                                    {{ HTML::linkAction('VideoController@showVideo', '', array($video->id), array('class'=>'fa fa-play-circle fa-3x'))}}
-                                                </li>
-                                                <li class="col-md-8 text-left">
-                                                    <h6 class="">{{$video->timeago}}</h6>
-                                                    <!-- <h6>views 156 Views</h6> -->
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 padding-0">
+                                            <div class="featured-post">
+                                                <figure>
+                                                    {{ HTML::image($video->image, $video->title, array('class'=>'img-responsive')) }}
+                                                    <div class="rating">
+                                                    <ul class="list-inline rating-stars hidden">
+                                                      <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                      <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                      <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                      <li><a href="#"><i class="fa fa-star-half-o"></i></a></li>
+                                                      <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                                                    </ul>
+                                                    <p class="post-label"><i class="fa fa-video-camera"></i> {{$video->genre}}</p>
+                                                    </div> <!-- end .rating -->
+
+                                                  <figcaption>
+                                                    <div class="post-view">
+                                                      <a href="{{ action('VideoController@showVideo', array('id'=> $video->id))}}"><i class="fa fa-play-circle fa-4x pulse2"></i></a>
+                                                    </div>
+                                                  </figcaption>
+                                                </figure>
+                                                <h4 class="post-title">{{ HTML::linkAction('VideoController@showVideo', $video->title, array('id'=> $video->id), array('class'=>''))}}</h4>
+                                                <p class="post-uploader">
+                                                    <i class="fa fa-user fa-fw"></i>
+                                                    {{ HTML::linkAction('ProfileController@show', $video->user->username, array('id'=>$video->user->id),
+                                                    array('class'=>'post-uploader'))}}
+                                                </p>  
+                                                <ul class="post-util list-inline">
+                                                    <li><i class="fa fa-comments"></i> 20 </li>
+                                                    <li><i class="fa fa-heart"></i> 20 </li>
+                                                    <li><i class="fa fa-clock-o"></i> {{$video->timeago}}</li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     @endforeach
                                 </div>
                                 <div id="rpictures" class="tab-pane fade in">
+                                    <!-- Fetch Pictures -->
                                     @foreach ($recentGalleries as $gallery)
-                                    <ul class="list-inline post-item">
-                                        <li class="col-md-8 col-sm-8 col-xs-12">
-                                            <ul class="list-inline">
-                                            <li class="col-md-3 pull-left">
-                                              {{ HTML::image($gallery->image, $gallery->caption, array('class'=>'img-responsive thumbnail','width'=>'50px','height'=>'50px')) }}                                       
-                                            </li>
-                                            <li class="col-md-9 pull-left post-desc">                                    
-                                                <h5>{{ HTML::linkAction('GalleryController@showGallery', $gallery->caption, array($gallery->id), array('class'=>'post-title'))}}</h5>
-                                                <h5><i class="fa fa-user fa-fw"></i>
-                                                {{ HTML::linkAction('ProfileController@show', $gallery->user->username, array('id'=>$gallery->user->id), array('class'=>'post-uploader'))}}</h5>
-                                                <p class="post-desc hidden-xs"> {{$gallery->caption}}</p>
-                                            </li>
-                                            </ul>
-                                        </li>
-                                        <li class="col-md-4 col-sm-4 col-xs-12 post-util">
-                                            <ul class="list-inline">
-                                                <li class="col-md-4 play-icon text-right">
-                                                    {{ HTML::linkAction('GalleryController@showGallery', '', array($gallery->id), array('class'=>'fa fa-play-circle fa-3x'))}}
-                                                </li>
-                                                <li class="col-md-8 text-left">
-                                                    <h6 class="">{{$gallery->timeago}}</h6>
-                                                    <!-- <h6>views 156 Views</h6> -->
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 padding-0">
+                                                <div class="featured-post">
+                                                    <figure>
+                                                        {{ HTML::image($gallery->image, $gallery->title, array('class'=>'img-responsive')) }}
+                                                        <div class="rating">
+                                                        <ul class="list-inline rating-stars hidden">
+                                                          <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                          <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                          <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                          <li><a href="#"><i class="fa fa-star-half-o"></i></a></li>
+                                                          <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                                                        </ul>
+                                                        <p class="post-label"><i class="fa fa-tag"></i> {{$gallery->cat}}</p>
+                                                        </div> <!-- end .rating -->
+
+                                                      <figcaption>
+                                                        <div class="post-view">
+                                                          <a href="{{ action('GalleryController@showGallery', array('id'=> $gallery->id))}}"><i class="fa fa-camera fa-4x pulse2"></i></a>
+                                                        </div>
+                                                      </figcaption>
+                                                    </figure>
+                                                    <h4 class="post-title">{{ HTML::linkAction('GalleryController@showGallery', $gallery->caption, array('id'=> $gallery->id), array('class'=>''))}}</h4>
+                                                    <p class="post-uploader">
+                                                        <i class="fa fa-user fa-fw"></i>
+                                                        {{ HTML::linkAction('ProfileController@show', $gallery->user->username, array('id'=>$gallery->user->id),
+                                                        array('class'=>'post-uploader'))}}
+                                                    </p>  
+                                                    <ul class="post-util list-inline">
+                                                        <li><i class="fa fa-comments"></i> 20 </li>
+                                                        <li><i class="fa fa-heart"></i> 20 </li>
+                                                        <li><i class="fa fa-clock-o"></i> {{$gallery->timeago}}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                     @endforeach
                                 </div>
                             </div>
                         </div> <!-- recent uploads end -->                        
-                    </aside>
-        @stop
     </div> 
     </div> <!-- ./ row ends -->
     </div> <!-- ./ container ends -->

@@ -99,15 +99,15 @@
         <div class="row">
             <div class="col-md-5 col-sm-5">
                 <h4 class="text-center">New Talent ?</h4>
-                <a href="" class="btn btn-default btn-block"><i class="fa fa-plus-square"></i> 
+                <a href="{{ action('UsersController@getCreate')}}" class="btn btn-default btn-block"><i class="fa fa-plus-square"></i> 
                     Create a Profile <i class="fa fa-user"></i></a>
             </div>
             <div class="divider col-md-2"><h2>OR</h2></div>
             <div class="col-md-5 col-sm-5">
-                <h3 class="text-center">Fans &amp; Talent hunters ?</h3>
-                <a href="" class="btn btn-default btn-block">Listen to Songs <i class="fa fa-music"></i></a>
-                <a href="" class="btn btn-default btn-block">Watch Videos <i class="fa fa-video-camera"></i></a>
-                <a href="" class="btn btn-default btn-block">View Pictures <i class="fa fa-camera"></i></a>
+                <h4 class="text-center">Fans &amp; Talent hunters ?</h4>
+                <a href="{{ action('SongController@index')}}" class="btn btn-default btn-block">Listen to Songs <i class="fa fa-music"></i></a>
+                <a href="{{ action('VideoController@index')}}" class="btn btn-default btn-block">Watch Videos <i class="fa fa-video-camera"></i></a>
+                <a href="{{ action('GalleryController@index')}}" class="btn btn-default btn-block">View Pictures <i class="fa fa-camera"></i></a>
             </div>
         </div>
         </div> <!-- ./ container ends -->
@@ -160,8 +160,8 @@
                                             </div>
                                           </figcaption>
                                         </figure>
-                                        <h4 class="post-title">{{ HTML::linkAction('SongController@showSong', $song->title, array('id'=> $song->id), array('class'=>'post-title'))}}</h4>
-                                        <p class="post-uploader">
+                                        <h4 class="post-title">{{ HTML::linkAction('SongController@showSong', $song->title, array('id'=> $song->id), array('class'=>''))}}</h4>
+                                        <p class="post-uploader userinfo-name">
                                             <i class="fa fa-user fa-fw"></i>
                                             {{ HTML::linkAction('ProfileController@show', $song->user->username, array('id'=>$song->user->id),
                                             array('class'=>'post-uploader'))}}
@@ -216,7 +216,7 @@
                                             </div>
                                           </figcaption>
                                         </figure>
-                                        <h4 class="post-title">{{ HTML::linkAction('VideoController@showVideo', $video->title, array('id'=> $video->id), array('class'=>'post-title'))}}</h4>
+                                        <h4 class="post-title">{{ HTML::linkAction('VideoController@showVideo', $video->title, array('id'=> $video->id), array('class'=>''))}}</h4>
                                         <p class="post-uploader">
                                             <i class="fa fa-user fa-fw"></i>
                                             {{ HTML::linkAction('ProfileController@show', $video->user->username, array('id'=>$video->user->id),
@@ -248,7 +248,7 @@
                         @if ($galleries->isEmpty())
                             <p class="text-center alert alert-info"  role="alert"> There are no Pictures!</p>
                         @else
-                        <!-- Fetch Videos -->
+                        <!-- Fetch Pictures -->
                         @foreach ($galleries as $gallery)
                                 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 padding-0">
                                     <div class="featured-post">
@@ -271,7 +271,7 @@
                                             </div>
                                           </figcaption>
                                         </figure>
-                                        <h4 class="post-title">{{ HTML::linkAction('GalleryController@showGallery', $gallery->caption, array('id'=> $gallery->id), array('class'=>'post-title'))}}</h4>
+                                        <h4 class="post-title">{{ HTML::linkAction('GalleryController@showGallery', $gallery->caption, array('id'=> $gallery->id), array('class'=>''))}}</h4>
                                         <p class="post-uploader">
                                             <i class="fa fa-user fa-fw"></i>
                                             {{ HTML::linkAction('ProfileController@show', $gallery->user->username, array('id'=>$gallery->user->id),
@@ -287,8 +287,10 @@
                         @endforeach
                         @endif 
                         <br>
+                        <p>
                         <!-- pagination -->
                         {{ $galleries->links() }} 
+                        </p>
                     </div>
                 </div>
             </div>
@@ -298,21 +300,21 @@
     <div id="section-4" class="our-partners">
             <div class="container">
                 <h3 class="text-center well">Let's expose your Talent to the World <i class="fa fa-globe"></i></h3>   
-                <div id="owl-carousel" class="owl-carousel">
-                    <div class="owl-lazy"><img data-src="img/thumb-150x150.png" alt=""></div>
-                    <div class="owl-lazy"><img data-src="img/thumb-150x150.png" alt=""></div>
-                    <div class="owl-lazy"><img data-src="img/thumb-150x150.png" alt=""></div>
-                    <div class="owl-lazy"><img data-src="img/thumb-150x150.png" alt=""></div>
-                    <div class="owl-lazy"><img data-src="img/thumb-150x150.png" alt=""></div>
-                    <div class="owl-lazy"><img data-src="img/thumb-150x150.png" alt=""></div>
-                    <div class="owl-lazy"><img data-src="img/thumb-150x150.png" alt=""></div>   
-                </div>
+                <!-- <div id="owl-demo" class="owl-carousel">
+                    <div class="item"><img class="owl-lazy" src="img/thumb-150x150.png" alt=""></div>
+                    <div class="item"><img class="owl-lazy" src="img/thumb-150x150.png" alt=""></div>
+                    <div class="item"><img class="owl-lazy" src="img/thumb-150x150.png" alt=""></div>
+                    <div class="item"><img class="owl-lazy" src="img/thumb-150x150.png" alt=""></div>
+                    <div class="item"><img class="owl-lazy" src="img/thumb-150x150.png" alt=""></div>
+                    <div class="item"><img class="owl-lazy" src="img/thumb-150x150.png" alt=""></div>
+                    <div class="item"><img class="owl-lazy" src="img/thumb-150x150.png" alt=""></div>
+                    <div class="item"><img class="owl-lazy" src="img/thumb-150x150.png" alt=""></div>                       
+                </div> -->
             </div>
     </div>
     @stop
     <!-- FOOTER - IN MASTER BLADE -->
 </div> <!-- ./ wrapper ends -->
-
 @section('scripts2')
     <!-- jQuery Version 1.11.0 -->
     <script src="{{ asset('js/jquery-2.1.3.min.js') }}"></script>
@@ -321,21 +323,34 @@
     <script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
 
     <!-- plugins -->
-    <script src="{{ asset('plugins/owl-carousel/js/owl.carousel.js')}}"></script>
+    <script src="{{ asset('plugins/owl-carousel/js/owl.carousel.min.js')}}"></script>
     <!-- inline script -->
+    <!-- home slider -->
     <script>
         $(document).ready(function() {
-            // owl-carousel
-            $(".owl-carousel").owlCarousel({
-                autoPlay: 3000, //Set AutoPlay to 3 seconds 
-                items : 4,
-                itemsDesktop : [1199,3],
-                itemsDesktopSmall : [979,3]
-            });
-            // home slider
             $('.carousel').carousel({
                 autoPlay: true;
             });
+        })
+    </script>
+    <!-- owl-carousel -->
+    <script>
+        $(document).ready(function() {            
+            // 
+            $("#owl-demo").owlCarousel({
+                autoPlay: 3000, //Set AutoPlay to 3 seconds 
+                items : 4,
+                itemsDesktop : [1199,3],
+                itemsDesktopSmall : [979,3],
+                itemsTablet : [768,3],
+                itemsMobile : [479,2],
+                navigation: false,
+                lazyLoad: true
+            })
         });
+        
     </script>
 @stop
+
+</body>
+</html>

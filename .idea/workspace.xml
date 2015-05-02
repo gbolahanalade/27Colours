@@ -2,11 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e65736f-64b0-4533-bf4c-7ef8c170731a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/storage/views/1e0460e0c7eefa3c86923c20fdae148b" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/29cols.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/storage/views/3048da911df64199e41f67d83f213672" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/storage/views/3f657bcd526774fb473276a8c0b736f3" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/storage/views/41bfc1534eea6032f47f2f3b67233d97" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/storage/views/6c1304988c1b747aa30a46871a5a0ad6" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/storage/views/8465dd212eb018effd2bffd0ca564488" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Lib/AuthenticateUser.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/OauthController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/storage/views/d644d7e605db952435521222ae6a58c4" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/config/fb_auth.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/config/gg_auth.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/config/twit_auth.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="DELETED" beforePath="C:\vhosts\29cols\app\config\local\database.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/controllers/HomeController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Song.php" afterPath="$PROJECT_DIR$/app/models/Song.php" />
@@ -61,11 +76,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/users/login.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.82051283" vertical-offset="804" max-vertical-offset="1442">
-              <caret line="94" column="55" selection-start-line="94" selection-start-column="55" selection-end-line="94" selection-end-column="55" />
+            <state vertical-scroll-proportion="-22.26087" vertical-offset="888" max-vertical-offset="1526">
+              <caret line="100" column="55" selection-start-line="100" selection-start-column="55" selection-end-line="100" selection-end-column="55" />
+              <folding>
+                <marker date="1430568610872" expanded="true" signature="4860:4905" placeholder="..." />
+                <marker date="1430568610872" expanded="true" signature="4860:4894" placeholder="..." />
+                <marker date="1430568610872" expanded="true" signature="4860:4879" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.045016076" vertical-offset="0" max-vertical-offset="622">
+              <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -136,6 +165,7 @@
         <option value="$PROJECT_DIR$/app/config/app.php" />
         <option value="$PROJECT_DIR$/app/Lib/AuthenticateUser.php" />
         <option value="$PROJECT_DIR$/app/views/users/login.blade.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -372,7 +402,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="1386">
           <caret line="29" column="84" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="84" />
-          <folding />
+          <folding>
+            <marker date="1430568610872" expanded="true" signature="4860:4905" placeholder="..." />
+            <marker date="1430568610872" expanded="true" signature="4860:4894" placeholder="..." />
+            <marker date="1430568610872" expanded="true" signature="4860:4879" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -399,13 +433,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1176" max-vertical-offset="1904">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.24" vertical-offset="0" max-vertical-offset="196">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -620,8 +647,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82051283" vertical-offset="804" max-vertical-offset="1442">
-          <caret line="94" column="55" selection-start-line="94" selection-start-column="55" selection-end-line="94" selection-end-column="55" />
+        <state vertical-scroll-proportion="-22.26087" vertical-offset="888" max-vertical-offset="1526">
+          <caret line="100" column="55" selection-start-line="100" selection-start-column="55" selection-end-line="100" selection-end-column="55" />
+          <folding>
+            <marker date="1430568610872" expanded="true" signature="4860:4905" placeholder="..." />
+            <marker date="1430568610872" expanded="true" signature="4860:4894" placeholder="..." />
+            <marker date="1430568610872" expanded="true" signature="4860:4879" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.045016076" vertical-offset="0" max-vertical-offset="622">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
           <folding />
         </state>
       </provider>

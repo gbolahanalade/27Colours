@@ -17,8 +17,8 @@
     @stop
     @section('content') 
         <div id="photo-upload" class="upload">
-        <div class="container-fluid">
-            <div class="col-md-5 center-block">
+        <div class="container-fluid padding-2px">
+            <div class="col-md-5 center-block padding-0">
             {{Form::open( array('url' =>'/gallery/create', 'files'=> true, 'method'=>'post', 'id'=>'')) }}
                 <div class="panel panel-default text-center">
                     <div class="panel-heading">

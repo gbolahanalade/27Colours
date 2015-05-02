@@ -16,14 +16,15 @@
                     </ul>
 @stop
 @section('content')
-    <div id="login" class="bckgrnd-white login">
+    <div id="login" class="bckgrnd-white">
         <div class="container-fluid">
             <div class="col-md-5 center-block">
+              <div class="login">
                 <form  role="form" method="POST" action="{{{ URL::to('users') }}}" accept-charset="UTF-8">
                     <input type="hidden" name="_token" value="{{{ Session::getToken() }}}">
                     <div class="text-center">
                         <header>
-                            <h2 class="margin0">Register</h2>
+                            <h2 class="margin0 section-header">Register</h2>
                         </header>
                         <div class="list-inline text-center margin-bottom-10 hidden">
                             <a class="btn rounded btn-facebook btn-facebook-inversed" data-original-title="Facebook" 
@@ -67,8 +68,8 @@
                     <div class="form-group">
                        <div class="col-sm-12">
                          <label for="remember">
-                            <input type="checkbox" name="remember" id="remember" value="1">
-                            <p>I read have the <a target="_blank" href="#">Terms and Conditions</a></p>
+                            <input type="checkbox" name="remember" id="remember" value="1">  
+                            <span> I read have the <a target="_blank" href="#">Terms and Conditions</a></span>
                          </label> 
                        </div>
                     </div>
@@ -84,11 +85,12 @@
                     @endif
                     <div class="form-group">
                       <div class="col-sm-12">
-                        <button type="submit" class="btn btn-default">
+                        <button type="submit" class="btn btn-primary">
                         {{{ Lang::get('confide::confide.signup.submit') }}}</button>
                       </div>
                     </div> 
                 </form>
+              </div>
             </div>
         </div>
     </div>

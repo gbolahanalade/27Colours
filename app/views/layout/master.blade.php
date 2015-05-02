@@ -1,9 +1,7 @@
 @include('layout.header')
     <!-- CONTENT -->
-    <div class="content">
-     
-            @yield('content')
-        
+    <div class="content">     
+		@yield('content')        
     </div>    
     <!-- Footer -->
 @include('layout.footer')

@@ -1,9 +1,7 @@
 <?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <!-- CONTENT -->
-    <div class="content">
-     
-            <?php echo $__env->yieldContent('content'); ?>
-        
+    <div class="content">     
+		<?php echo $__env->yieldContent('content'); ?>        
     </div>    
     <!-- Footer -->
 <?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
