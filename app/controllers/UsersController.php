@@ -1,5 +1,5 @@
 <?php
-
+use App\Lib\AuthenticateUser;
 
 
 /**
@@ -7,8 +7,18 @@
  *
  * Implements actions regarding user management
  */
-class UsersController extends Controller
+class UsersController extends BaseController
 {
+    /**
+     * @var AuthenticateUser
+     */
+    private $authenticateUser;
+
+    function __construct(AuthenticateUser $authenticateUser)
+    {
+
+        $this->authenticateUser = $authenticateUser;
+    }
 
     /**
      * Displays the form for account creation
@@ -259,7 +269,16 @@ class UsersController extends Controller
         }
     
     }
-   
 
 
+    public function process($provider, $auth=null)
+    {
+        return $this->authenticateUser->execute($auth, $provider, $this);
+    }
+
+
+    private function userHasLoggedIn()
+    {
+        return Redirect::intended('/profile');
+    }
 }

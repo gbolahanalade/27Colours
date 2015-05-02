@@ -1,0 +1,17 @@
+<?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <!-- CONTENT -->
+    <div class="content">
+     
+            <?php echo $__env->yieldContent('content'); ?>
+        
+    </div>    
+    <!-- Footer -->
+<?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<!-- ./ wrapper ends -->
+    <!-- jQuery Version 1.11.0 -->
+<?php echo $__env->yieldContent('scripts2'); ?>
+    
+
+</body>
+
+</html>

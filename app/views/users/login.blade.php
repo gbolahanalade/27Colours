@@ -17,6 +17,9 @@
 @stop
 @section('content')
     <div id="login" class="bckgrnd-white login">
+
+        @include('flash::message')
+
         <div class="container-fluid">
             <div class="col-md-5 center-block">
                 <form role="form" method="POST" action="{{{ URL::to('/users/login') }}}" accept-charset="UTF-8">
@@ -25,7 +28,7 @@
                         <header>
                             <h2 class="margin0">Sign in</h2>
                         </header>
-                        <div class="list-inline text-center margin-bottom-10 hidden">
+                        <div class="list-inline text-center margin-bottom-10">
                             <a class="btn btn-default rounded" data-original-title="Facebook"
                                 href="{{action('HomeController@loginWithFacebook')}}"><i class="fa fa-facebook"></i> Facebook</a>
                             <a class="btn rounded btn-default" data-original-title="Google"
@@ -89,5 +92,6 @@
     <script src="{{ asset('js/jquery-ui.js') }}"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
+    <script>$('#flash-overlay-modal').modal();</script>
 @stop
 

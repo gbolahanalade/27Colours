@@ -4,7 +4,7 @@ use Nicolaslopezj\Searchable\SearchableTrait;
 class Song extends Eloquent {
 	use SearchableTrait;
 
-	protected $fillable = [];
+	protected $guarded = ['id'];
 	protected $table = 'songs';
 
 	public static $rules = array(
@@ -70,7 +70,7 @@ class Song extends Eloquent {
 
     public function scopeRelatedSong($query)
     {
-    	return $query->where('user_d');
+    	return $query->where('user_id');
     } 
 
     public function getSoundcloud($url)

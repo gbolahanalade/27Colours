@@ -7,13 +7,17 @@
 		"laravel/framework": "4.2.*",
 		"zizaco/confide": "~4.0@dev",
 		"artdarek/oauth-4-laravel": "dev-master",
-		"facebook/php-sdk": "~3.2",
 		"intervention/image": "dev-master",
 		"nicolaslopezj/searchable": "1.*",
 		"fbf/laravel-youtube": "dev-master",
 		"fbf/laravel-comments": "dev-master",
-		"cohensive/embed": "dev-master"
-		"laravel/socialite": "~2.0"
+        "cohensive/embed": "5.0.0",
+        "Laracasts/Flash" : "~1.0",
+        "hybridauth/hybridauth": "dev-master",
+        "iron-io/iron_mq": "1.4.8",
+        "laracasts/commander": "~1.0",
+        "laracasts/validation": "~1.2",
+        "guzzlehttp/guzzle": "~5.0@dev"
 		
 	},
 	"autoload": {
@@ -24,7 +28,11 @@
 			"app/database/migrations",
 			"app/database/seeds",
 			"app/tests/TestCase.php"
-		]
+		],
+        "psr-4" : {
+            "Lib\\" : "app/Lib",
+            "App\\" : "app"
+        }
 	},
 	"scripts": {
 		"post-install-cmd": [

@@ -80,20 +80,26 @@ Route::post('/profile/upload', 'ProfileController@doGetPhoto');
 //Route::get('/profile',['as'=> 'profile.single', 'uses' =>'ProfileController@getSingle']);
 
 
-// Confide routes
-Route::get('users/register',['as'=> 'register', 'uses' =>'UsersController@getCreate']);
-Route::post('users', 'UsersController@postCreate');
-Route::get('users/login', ['as'=>'login', 'uses'=> 'UsersController@getLogin']);
-Route::post('users/login', 'UsersController@postLogin');
-Route::get('users/confirm/{code}', 'UsersController@confirm');
-Route::get('users/forgot_password', 'UsersController@getForgotPassword');
-Route::post('users/forgot_password', 'UsersController@postForgotPassword');
-Route::get('users/reset_password/{token}', 'UsersController@getResetPassword');
-Route::post('users/reset_password', 'UsersController@postResetPassword');
-Route::get('users/logout', ['as' => 'logout', 'uses' => 'UsersController@getLogout']);
+// Confide routes || Route Group
+Route::group(
+    ['prefix'=>'users'], function () {
+
+        Route::get('register',['as'=> 'register', 'uses' =>'UsersController@getCreate']);
+        Route::post('/', 'UsersController@postCreate');
+        Route::get('login', ['as'=>'login', 'uses'=> 'UsersController@getLogin']);
+        Route::post('login', 'UsersController@postLogin');
+        Route::get('confirm/{code}', 'UsersController@confirm');
+        Route::get('forgot_password', 'UsersController@getForgotPassword');
+        Route::post('forgot_password', 'UsersController@postForgotPassword');
+        Route::get('reset_password/{token}', 'UsersController@getResetPassword');
+        Route::post('reset_password', 'UsersController@postResetPassword');
+        Route::get('logout', ['as' => 'logout', 'uses' => 'UsersController@getLogout']);
+
+    }
+);
 
 Route::get('/upload', 'UploadController@index');
 
-
-Route::get('users/login/fb', ['as' => 'fblogin', 'uses'=> 'HomeController@loginWithFacebook']);
-Route::get('users/login/go', ['as' => 'gologin', 'uses'=> 'HomeController@loginWithGoogle']);
+Route::get('login/{provider}/{auth?}', 'UsersController@process');
+Route::get('login/facebook', ['as' => 'fblogin', 'uses'=> 'HomeController@loginWithFacebook']);
+Route::get('login/google', ['as' => 'gologin', 'uses'=> 'HomeController@loginWithGoogle']);
