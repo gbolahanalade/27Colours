@@ -649,7 +649,7 @@ h3.userinfo-name {margin-top: 2px;}
 	position: relative;
 }
 .content .sidebar {
-	background-color: #F8F8F8;
+	background-color: inherit;
 	min-height: 400px;
 }
 .sidebar-thumb {
