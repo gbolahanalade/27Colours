@@ -21,40 +21,25 @@
                         <div class="panel-body">
                             <!-- Fetch Songs -->
                         @foreach ($recentSongs as $song)
-                                <div class="col-xs-6 padding-0">
-                                    <div class="featured-post">
-                                        <figure>
-                                            {{ HTML::image($song->image, $song->title, array('class'=>'img-responsive')) }}
-                                            <div class="rating">
-                                            <ul class="list-inline rating-stars hidden">
-                                              <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                              <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                              <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                              <li><a href="#"><i class="fa fa-star-half-o"></i></a></li>
-                                              <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                            <div class="media sidebar-thumb">
+                                        <a class="" href="">{{ HTML::image($song->image, $song->title, 
+                                            array('class'=>'img-responsive pull-left media-object')) }}</a>
+                                        <div class="media-body info-overflow">
+                                            <h4 class="media-heading post-title">
+                                                {{ HTML::linkAction('SongController@showSong', $song->title, array('id'=> $song->id), array('class'=>''))}}
+                                            </h4>
+                                            <p class="post-uploader">
+                                                <i class="fa fa-user fa-fw"></i>
+                                                {{ HTML::linkAction('ProfileController@show', $song->user->username, array('id'=>$song->user->id),
+                                                array('class'=>'post-uploader'))}}
+                                            </p>  
+                                            <ul class="post-util list-inline userinfo-details">
+                                                <li><i class="fa fa-comments"></i> 20 </li>
+                                                <li><i class="fa fa-heart"></i> 20 </li>
+                                                <li><i class="fa fa-clock-o"></i> {{$song->timeago}}</li>
                                             </ul>
-                                            <p class="post-label"><i class="fa fa-music"></i> {{$song->genre}}</p>
-                                            </div> <!-- end .rating -->
-
-                                          <figcaption>
-                                            <div class="post-view">
-                                              <a href="{{ action('SongController@showSong', array('id'=> $song->id))}}"><i class="fa fa-music fa-4x pulse2"></i></a>
-                                            </div>
-                                          </figcaption>
-                                        </figure>
-                                        <h4 class="post-title">{{ HTML::linkAction('SongController@showSong', $song->title, array('id'=> $song->id), array('class'=>'post-title'))}}</h4>
-                                        <p class="post-uploader">
-                                            <i class="fa fa-user fa-fw"></i>
-                                            {{ HTML::linkAction('ProfileController@show', $song->user->username, array('id'=>$song->user->id),
-                                            array('class'=>'post-uploader'))}}
-                                        </p>  
-                                        <ul class="post-util list-inline">
-                                            <li><i class="fa fa-comments"></i> 20 </li>
-                                            <li><i class="fa fa-heart"></i> 20 </li>
-                                            <li><i class="fa fa-clock-o"></i> {{$song->timeago}}</li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                        </div>
+                                    </div> 
                         @endforeach
                         </div>
                         </div>

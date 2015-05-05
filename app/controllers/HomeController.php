@@ -18,14 +18,14 @@ class HomeController extends BaseController {
 	public function index()
 	{
 	
-     	$songs = Song::orderBy('id','desc')->paginate(6);
+     	$songs = Song::orderBy('id','desc')->paginate(8);
 		  $songs->getFactory()->setViewName('pagination::simple');
 		  $tags = Tag::lists('name', 'id');
        
-        $videos= Video::orderBy('id', 'desc')->paginate(6);
+        $videos= Video::orderBy('id', 'desc')->paginate(8);
         $videos->getFactory()->setViewName('pagination::simple');
 
-        $galleries = Gallery::orderBY('id', 'desc')->paginate(6);
+        $galleries = Gallery::orderBY('id', 'desc')->paginate(8);
         $galleries->getFactory()->setViewName('pagination::simple');
 
 
