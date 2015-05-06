@@ -2,29 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="598961b2-8b61-4559-adef-0e0a234ccadd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/galleries/52tBUXXfOWvs.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/galleries/IZiGZTMEs0OF.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/songs/images/aoQagZ_Empire_The Soundtrack_FINAL.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/2069e07ced8f2f2718c56a11632a16d4" afterPath="$PROJECT_DIR$/app/storage/views/2069e07ced8f2f2718c56a11632a16d4" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/215d94352e382b45326c7333b460b1b2" afterPath="$PROJECT_DIR$/app/storage/views/215d94352e382b45326c7333b460b1b2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/34f3e59d1c660872e8796065afb90c75" afterPath="$PROJECT_DIR$/app/storage/views/34f3e59d1c660872e8796065afb90c75" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/4d15df2a2a6101aa29f1f20b310b222c" afterPath="$PROJECT_DIR$/app/storage/views/4d15df2a2a6101aa29f1f20b310b222c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/63a35a117c01924ea89ea1e77bd686ca" afterPath="$PROJECT_DIR$/app/storage/views/63a35a117c01924ea89ea1e77bd686ca" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/879b4e8127500d69bf76c39f41d25a5c" afterPath="$PROJECT_DIR$/app/storage/views/879b4e8127500d69bf76c39f41d25a5c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/98f304a76ce64cccea0269d2efb7d19a" afterPath="$PROJECT_DIR$/app/storage/views/98f304a76ce64cccea0269d2efb7d19a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/controllers/HomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/f560a78894327d78cd47b6697ad3c8ea" afterPath="$PROJECT_DIR$/app/storage/views/f560a78894327d78cd47b6697ad3c8ea" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/gallery/gallery-sidebar.blade.php" afterPath="$PROJECT_DIR$/app/views/gallery/gallery-sidebar.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/gallery/gallery_upload.blade.php" afterPath="$PROJECT_DIR$/app/views/gallery/gallery_upload.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layout/header.blade.php" afterPath="$PROJECT_DIR$/app/views/layout/header.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/profile/index2.blade.php" afterPath="$PROJECT_DIR$/app/views/profile/index2.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/profile/index2_logout.blade.php" afterPath="$PROJECT_DIR$/app/views/profile/index2_logout.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/logs/laravel.log" afterPath="$PROJECT_DIR$/app/storage/logs/laravel.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/song/song-sidebar.blade.php" afterPath="$PROJECT_DIR$/app/views/song/song-sidebar.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/profile/talents.blade.php" afterPath="$PROJECT_DIR$/app/views/profile/talents.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/video/video-sidebar.blade.php" afterPath="$PROJECT_DIR$/app/views/video/video-sidebar.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="29cols.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.173914" vertical-offset="1098" max-vertical-offset="2086">
-              <caret line="105" column="67" selection-start-line="105" selection-start-column="67" selection-end-line="105" selection-end-column="67" />
+            <state vertical-scroll-proportion="0.59615386" vertical-offset="1098" max-vertical-offset="2086">
+              <caret line="105" column="66" selection-start-line="105" selection-start-column="66" selection-end-line="105" selection-end-column="66" />
               <folding>
                 <element signature="e#7#390#0#PHP" expanded="true" />
               </folding>
@@ -61,10 +40,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.849359" vertical-offset="1806" max-vertical-offset="2842">
+            <state vertical-scroll-proportion="77.304344" vertical-offset="1806" max-vertical-offset="2842">
               <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
@@ -219,8 +198,8 @@
         <option value="$PROJECT_DIR$/app/views/profile/index2.blade.php" />
         <option value="$PROJECT_DIR$/app/start/global.php" />
         <option value="$PROJECT_DIR$/app/views/users/register.blade.php" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/controllers/HomeController.php" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
       </list>
     </option>
   </component>
@@ -919,21 +898,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
+    <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.173914" vertical-offset="1098" max-vertical-offset="2086">
-          <caret line="105" column="67" selection-start-line="105" selection-start-column="67" selection-end-line="105" selection-end-column="67" />
-          <folding>
-            <element signature="e#7#390#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="77.304344" vertical-offset="1806" max-vertical-offset="2842">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.php">
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.849359" vertical-offset="1806" max-vertical-offset="2842">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.59615386" vertical-offset="1098" max-vertical-offset="2086">
+          <caret line="105" column="66" selection-start-line="105" selection-start-column="66" selection-end-line="105" selection-end-column="66" />
+          <folding>
+            <element signature="e#7#390#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
