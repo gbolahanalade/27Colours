@@ -1,0 +1,108 @@
+<?php $__env->startSection('header'); ?>
+        <title>Welcome | 27Colours</title>
+         <!-- navigation -->
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="<?php echo action('HomeController@index'); ?>">
+                                <i class="fa fa-home fa-fw fa-2x"></i>
+                                <span class="sr-only">(Current)</span>
+                            </a>
+                        </li>
+                        <li><a href="<?php echo action('SongController@index'); ?>"><i class=""></i> Songs</a></li>
+                        <li><a href="<?php echo action('VideoController@index'); ?>"><i class=""></i> Videos</a></li>
+                        <li><a href="<?php echo action('GalleryController@index'); ?>"><i class=""></i> Pictures</a></li>
+                        <li><a href="<?php echo action('TalentController@index'); ?>"><i class=""></i> Talents</a></li>
+                    </ul>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <div id="login" class="bckgrnd-white">
+        <div class="container-fluid">
+            <div class="col-md-5 center-block">
+              <div class="login">
+                <form  role="form" method="POST" action="<?php echo e(URL::to('users')); ?>" accept-charset="UTF-8">
+                    <input type="hidden" name="_token" value="<?php echo e(Session::getToken()); ?>">
+                    <div class="text-center">
+                        <header>
+                            <h2 class="margin0 section-header">Register</h2>
+                        </header>
+                        <div class="list-inline text-center margin-bottom-10 hidden">
+                            <a class="btn rounded btn-facebook btn-facebook-inversed" data-original-title="Facebook" 
+                                href="/login/facebook"><i class="fa fa-facebook"></i> Facebook</a>
+                            <a class="btn rounded btn-youtube btn-youtube-inversed" data-original-title="Google"
+                                href="/login/google"><i class="fa fa-google"></i> Google</a>
+                        </div>
+                        <p>Already registered? Click <?php echo HTML::linkRoute('login', 'here' ); ?> to sign in.</p>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input required type="text" class="form-control" 
+                            placeholder="<?php echo e(Lang::get('confide::confide.username')); ?>" 
+                            name="username" id="username" value="<?php echo e(Input::old('username')); ?>">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                        <input required type="email" class="form-control" 
+                        placeholder="<?php echo e(Lang::get('confide::confide.e_mail')); ?>" 
+                        name="email" id="email" value="<?php echo e(Input::old('email')); ?>">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                        <input required type="password" class="form-control" 
+                            placeholder="<?php echo e(Lang::get('confide::confide.password')); ?>" name="password" id="password">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                            <input required type="password" class="form-control" 
+                            placeholder="<?php echo e(Lang::get('confide::confide.password_confirmation')); ?>" 
+                            name="password_confirmation" id="password_confirmation">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                       <div class="col-sm-12">
+                         <label for="remember">
+                            <input type="checkbox" name="remember" id="remember" value="1">  
+                            <span> I read have the <a target="_blank" href="#">Terms and Conditions</a></span>
+                         </label> 
+                       </div>
+                    </div>
+                    <?php if(Session::get('error')): ?>
+                        <div class="alert alert-error alert-danger" role="alert">
+                            <?php if(is_array(Session::get('error'))): ?>
+                                <?php echo head(Session::get('error')); ?>
+
+                            <?php endif; ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if(Session::get('notice')): ?>
+                        <div class="alert alert-info" role="alert"><?php echo Session::get('notice'); ?></div>
+                    <?php endif; ?>
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                        <button type="submit" class="btn btn-primary">
+                        <?php echo e(Lang::get('confide::confide.signup.submit')); ?></button>
+                      </div>
+                    </div> 
+                </form>
+              </div>
+            </div>
+        </div>
+    </div>
+<?php $__env->stopSection(); ?>
+    <!-- FOOTER - IN MASTER BLADE -->
+</div> <!-- ./ wrapper ends -->
+
+<?php $__env->startSection('scripts2'); ?>
+    <!-- jQuery Version 1.11.0 -->
+    <script src="<?php echo asset('js/jquery.min.js'); ?>"></script>
+    <script src="<?php echo asset('js/jquery-ui.js'); ?>"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<?php echo asset('js/bootstrap/bootstrap.min.js'); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

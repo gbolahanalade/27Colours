@@ -1,5 +1,6 @@
 <?php
 use App\Lib\AuthenticateUser;
+use Illuminate\Support\Facades\Session;
 
 
 /**
@@ -16,7 +17,7 @@ class UsersController extends BaseController
 
     function __construct(AuthenticateUser $authenticateUser)
     {
-
+        $this->beforeFilter('guest', ['except'=>'getLogout']);
         $this->authenticateUser = $authenticateUser;
     }
 
@@ -212,72 +213,79 @@ class UsersController extends BaseController
      */
     public function getLogout()
     {
+        if (Session::has('social_auth')):
+            $social_auth = new Hybrid_Auth(Session::pull('social_auth'));
+            $social_auth->logoutAllProviders();
+        endif;
+
+        //handle confide logout
         Confide::logout();
 
         return Redirect::to('/')
         ->with('notice', 'You have been logged out');
     }
 
-    public function fblogin()
-        {
-            $facebook = new Facebook(Config::get('facebook'));
-            $params = array(
-          'redirect_uri' => url('users/login/fb/callback'),
-            'scope' => 'email',
-    );
-         return Redirect::away($facebook->getLoginUrl($params));
-
-      }
-
-   public function fbcall()
-        {
-          $code = Input::get('code');
-         if (strlen($code) == 0) return Redirect::to('/')->with('error', 'There was an error communicating with Facebook');
-
-         $facebook = new Facebook(Config::get('facebook'));
-         $uid = $facebook->getUser();
-
-    if ($uid == 0) return Redirect::to('/')->with('message', 'There was an error');
-
-    $me = $facebook->api('/me');
-    $pic=$facebookService->request( ('/me/picture?type=large' ), true );
-    //return  Redirect::to('/')->with('error', 'this user'. $me['name']. 'got here!!!');
-    //$pic ='https://graph.facebook.com/'.$me['id'].'/picture?type=large';
-
-    $user = User::whereUid($uid)->first();
-//return  Redirect::to('/')->with('error', 'this user'. $user . ' got here!!!');
-    if (empty($user)) {
-
-        $user = new User();
-        $user->name = $me['name'];
-        $user->email = $me['email'];
-        $user->photo ='https://graph.facebook.com/'.$me['id'].'/picture?type=large';
-        $user->uid = $uid;
-
-        $user->save();
-    }
-
-    $user->access_token = $facebook->getAccessToken();
-    $user->save();
-
-       if (Confide::user ()){
-
-    return Redirect::to('/')->with('notice', 'Logged in with Facebook');
-    }
-    else{ 
-     return Redirect::to('/')->with('error', 'Cannot create User');
-        }
-    
-    }
+//    public function fblogin()
+//        {
+//            $facebook = new Facebook(Config::get('facebook'));
+//            $params = array(
+//          'redirect_uri' => url('users/login/fb/callback'),
+//            'scope' => 'email',
+//    );
+//         return Redirect::away($facebook->getLoginUrl($params));
+//
+//      }
+//
+//   public function fbcall()
+//        {
+//          $code = Input::get('code');
+//         if (strlen($code) == 0) return Redirect::to('/')->with('error', 'There was an error communicating with Facebook');
+//
+//         $facebook = new Facebook(Config::get('facebook'));
+//         $uid = $facebook->getUser();
+//
+//    if ($uid == 0) return Redirect::to('/')->with('message', 'There was an error');
+//
+//    $me = $facebook->api('/me');
+//    $pic=$facebookService->request( ('/me/picture?type=large' ), true );
+//    //return  Redirect::to('/')->with('error', 'this user'. $me['name']. 'got here!!!');
+//    //$pic ='https://graph.facebook.com/'.$me['id'].'/picture?type=large';
+//
+//    $user = User::whereUid($uid)->first();
+////return  Redirect::to('/')->with('error', 'this user'. $user . ' got here!!!');
+//    if (empty($user)) {
+//
+//        $user = new User();
+//        $user->name = $me['name'];
+//        $user->email = $me['email'];
+//        $user->photo ='https://graph.facebook.com/'.$me['id'].'/picture?type=large';
+//        $user->uid = $uid;
+//
+//        $user->save();
+//    }
+//
+//    $user->access_token = $facebook->getAccessToken();
+//    $user->save();
+//
+//       if (Confide::user ()){
+//
+//    return Redirect::to('/')->with('notice', 'Logged in with Facebook');
+//    }
+//    else{
+//     return Redirect::to('/')->with('error', 'Cannot create User');
+//        }
+//
+//    }
 
 
     public function process($provider, $auth=null)
     {
+
         return $this->authenticateUser->execute($auth, $provider, $this);
     }
 
 
-    private function userHasLoggedIn()
+    public function userHasLoggedIn()
     {
         return Redirect::intended('/profile');
     }

@@ -954,3 +954,12 @@ footer .footer1 .social-icons ul li a {
 @media (min-width: 1200px) {
 	
 }
+
+
+div.form-errors {
+    margin-top: 10px;
+}
+
+div.form-errors ul li {
+    text-align: left;
+}

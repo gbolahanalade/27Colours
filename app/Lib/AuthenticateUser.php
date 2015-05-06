@@ -6,6 +6,7 @@ use Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Laracasts\Flash\Flash;
+use UserRepository;
 
 define('APP_PATH', app_path());
 define('SOCIAL_AUTH', APP_PATH . '/config/social_auth.php');
@@ -19,12 +20,18 @@ class AuthenticateUser
     CONST FACEBOOK = FB_AUTH;
     CONST TWITTER = TW_AUTH;
     CONST GOOGLE = GG_AUTH;
+    /**
+     * @var UserRepository
+     */
+    private $repository;
+    private $app;
 
 
-
-    function __construct()
+    function __construct(UserRepository $repository)
     {
 
+        $this->repository = $repository;
+        $this->app = app();
     }
 
     /**
@@ -46,23 +53,24 @@ class AuthenticateUser
 
             try{
                 $u = $this->getSocialUser($provider);
-                $user = $this->userRepository->findByIdentifierOrCreate($u);
-            } catch (\Exception $e)
-            {
+            } catch (\Exception $e) {
                 Flash::overlay("Authentication failed! The user denied your request.","Authentication Failed");
                 return Redirect::to('users/login');
             }
 
-
-            //Auth::login($user, true);
-            dd($user);
-
+            $user = $this->repository->registerSocialUSer($u, $provider);
+            //log user in
+            $this->app['auth']->login($user);
             Flash::overlay("You have been logged in successfully");
-            return $listener->userHasLoggedIn($user);
+            return $listener->userHasLoggedIn($u);
+
         }catch (Exception $e) {
+
             Flash::overlay($e->getMessage());
-            return $listener->userHasLoggedIn($user);
+            return $listener->userHasLoggedIn($u);
         }
+
+
 
     }
 

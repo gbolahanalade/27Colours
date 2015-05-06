@@ -77,7 +77,7 @@
                                         <li><a href="{{action('SongController@getNew')}}"><i class="fa fa-music fa-xs"></i> | Add Songs</a></li>
                                         <li><a href="{{action('VideoController@getNew')}}"><i class="fa fa-video-camera fa-xs"></i> | Add Videos</a></li>
                                         <li><a href="{{action('GalleryController@getNew')}}"><i class="fa fa-camera fa-xs"></i> | Add Pictures</a></li>
-                                        <li>{{ HTML::linkRoute('logout', 'logout', array ('class'=>'') )}} </li>
+                                        <li>{{ HTML::linkRoute('logout', 'logout')}} </li>
                                     @else
                                         <li>{{ HTML::linkRoute('register', 'Registration', array('class'=>'hidden-xs hidden-sm'))}}</li>
                                         <li>{{ HTML::linkRoute('login', 'Sign In' )}}</li>

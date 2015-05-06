@@ -1,6 +1,5 @@
 <?php
-
-
+use Illuminate\Support\Facades\Hash;
 
 /**
  * Class UserRepository
@@ -10,6 +9,54 @@
  */
 class UserRepository
 {
+    private $app;
+
+    function __construct()
+    {
+        $this->app = app();
+    }
+
+
+    public function registerSocialUSer(Hybrid_User_Profile $user, $provider)
+    {
+        //register username || email || confirmed=>1 ||
+        //check if user exists
+        $t = Confide::getUserByEmailOrUsername(['email'=>$user->email]);
+
+        if ( ! null == $t)
+        {
+            return $t;
+        }
+
+        //create user
+        $u = new User;
+        $u->username =  $this->coverSpace($this->lowerCase($user->displayName));
+        $u->email = $user->email;
+        $u->is_socialuser = 1;
+        $u->confirmed = 1;
+        $r = $this->save($u,false);
+
+        //store user_details
+        $user_detail = [
+            'user_id' => $u->id,
+            'firstname' => $this->lowerCase($user->firstName),
+            'lastname' => $this->lowerCase($user->lastName),
+            "$provider" => $user->profileURL,
+            "$provider" . 'ID' => $user->identifier
+        ];
+        UserDetail::create($user_detail);
+
+        return $u;
+    }
+
+
+    private function coverSpace($text)
+    {
+        return str_replace(" ", "_", $text);
+    }
+
+    private function lowerCase($text){return strtolower($text);}
+
     /**
      * Signup a new account with the given parameters
      *
@@ -22,7 +69,7 @@ class UserRepository
         $user = new User;
 
         $user->username = array_get($input, 'username');
-        $user->email    = array_get($input, 'email');
+        $user->email = array_get($input, 'email');
         $user->password = array_get($input, 'password');
 
         // The password confirmation will be removed from model
@@ -31,10 +78,12 @@ class UserRepository
         $user->password_confirmation = array_get($input, 'password_confirmation');
 
         // Generate a random confirmation code
-        $user->confirmation_code     = md5(uniqid(mt_rand(), true));
+        $user->confirmation_code = md5(uniqid(mt_rand(), true));
 
         // Save if valid. Password field will be hashed before save
-        $this->save($user);
+        //@NOTE pass validate=true for validation to be performed.
+        //Confide trait is greedy and will not allow users to be created without being validated. Social users can be trusted so we dont need to validate them.
+        $this->save($user,$validate=true);
 
         return $user;
     }
@@ -48,7 +97,7 @@ class UserRepository
      */
     public function login($input)
     {
-        if (! isset($input['password'])) {
+        if (!isset($input['password'])) {
             $input['password'] = null;
         }
 
@@ -86,7 +135,7 @@ class UserRepository
                 $user->password
             );
 
-            return (! $user->confirmed && $correctPassword);
+            return (!$user->confirmed && $correctPassword);
         }
     }
 
@@ -100,10 +149,10 @@ class UserRepository
     public function resetPassword($input)
     {
         $result = false;
-        $user   = Confide::userByResetPasswordToken($input['token']);
+        $user = Confide::userByResetPasswordToken($input['token']);
 
         if ($user) {
-            $user->password              = $input['password'];
+            $user->password = $input['password'];
             $user->password_confirmation = $input['password_confirmation'];
             $result = $this->save($user);
         }

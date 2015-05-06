@@ -11,6 +11,11 @@
 |
 */
 
+Route::get('test', function(){
+    dd(Session::has('social_auth'));
+
+});
+
 Route::model('user','User');
 Route::model('blog','Blog');
 Route::model('song','Song');
@@ -98,8 +103,42 @@ Route::group(
     }
 );
 
-Route::get('/upload', 'UploadController@index');
-
 Route::get('login/{provider}/{auth?}', 'UsersController@process');
-Route::get('login/facebook', ['as' => 'fblogin', 'uses'=> 'HomeController@loginWithFacebook']);
-Route::get('login/google', ['as' => 'gologin', 'uses'=> 'HomeController@loginWithGoogle']);
+
+
+Route::get('migrate-data', function(){
+
+    //select all data in user table
+    $all = User::all();
+
+    foreach ($all as $user) :
+
+        //check user_details table
+        if ( UserDetail::where('user_id', $user->id)->count() ):
+            continue;
+        endif;
+        $user_details = [
+            'user_id'       => $user->id,
+            'firstname'     => $user->first_name,
+            'lastname'      => $user->last_name,
+            'talents'       => $user->talents,
+            'facebook'      => $user->facebook,
+            'twitter'       => $user->twitter,
+            'soundcloud'    => $user->souncloud,
+            'youtube'       => $user->youtube,
+            'tagline'       => $user->tagline,
+            'googleID'      => $user->googleID,
+            'facebookID'    => $user->facebookID,
+        ];
+        //insert data here
+        UserDetail::create($user_details);
+
+    endforeach;
+
+return;
+
+    //select a row from the user_details table where user_details.user_id = user_detail.id
+
+    //if data is empty then insert
+
+});

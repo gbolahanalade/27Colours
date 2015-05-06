@@ -37,7 +37,8 @@
       </div>
     </div>
     @stop
-    @section('content') 
+    @section('content')
+    @include('flash::message')
     <div class="container featured-posts"> 
     <div class="row">
     <div class="col-md-9 padding-0">
@@ -60,13 +61,13 @@
             </div>
             <div class="col-md-6 col-sm-6 padding-2px">
                 <h3 class="userinfo-name info-overflow">{{$user->username}}</h3> 
-                <p class="userinfo-details info-overflow">Real Name: <span class="">{{ $user->full_name }}</span></p>
-                <p class="userinfo-details info-overflow">Talent: <span class="">{{$user->talents}}</span></p>
+                <p class="userinfo-details info-overflow">Real Name: <span class="">{{ $user_details->firstname . ' '. $user_details->lastname }}</span></p>
+                <p class="userinfo-details info-overflow">Talent: <span class="">{{$user_details->talent}}</span></p>
                 <div>
-                    <a class="btn btn-facebook btn-sm" href="{{$user->facebook}}" target="_blank"><i class="fa fa-facebook fa-xs"></i></a>
-                    <a class="btn btn-twitter btn-sm" href="{{$user->twitter}}" target="_blank"><i class="fa fa-twitter fa-xs"></i></a>
-                    <a class="btn btn-soundcloud btn-sm" href="{{$user->soundcloud}}" target="_blank"><i class="fa fa-soundcloud fa-xs"></i></a>
-                    <a class="btn btn-youtube btn-sm" href="{{$user->youtube}}" target="_blank"><i class="fa fa-youtube fa-xs"></i></a>
+                    <a class="btn btn-facebook btn-sm" href="{{ ($user_details->facebookpage) ? $user_details->facebookpage : '#' }}" target="_blank"><i class="fa fa-facebook fa-xs"></i></a>
+                    <a class="btn btn-twitter btn-sm" href="{{ ($user_details->twitterpage) ? $user_details->twitterpage : '#' }}" target="_blank"><i class="fa fa-twitter fa-xs"></i></a>
+                    <a class="btn btn-soundcloud btn-sm" href="{{ ($user_details->soundcloudpage) ? $user_details->soundcloudpage : '#' }}" target="_blank"><i class="fa fa-soundcloud fa-xs"></i></a>
+                    <a class="btn btn-youtube btn-sm" target="_blank"><i class="fa fa-youtube fa-xs"></i></a>
                 </div>
                 <!-- <hr class="hr5">                                 
                 <span class="description">{{$user->tagline}}</span>  -->
@@ -413,6 +414,7 @@
     <script src="{{ asset('js/jquery-ui.js') }}"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
+    <script>$('#flash-overlay-modal').modal();</script>
    @stop
 
     

@@ -16,14 +16,10 @@
                     </ul>
 @stop
 @section('content')
-<<<<<<< HEAD
-    <div id="login" class="bckgrnd-white login">
 
-        @include('flash::message')
 
-=======
+
     <div id="login" class="bckgrnd-white">
->>>>>>> bb0fbe12473d0e9569819d8618d990651320e3dd
         <div class="container-fluid">
             <div class="col-md-5 center-block">
               <div class="login">
@@ -35,9 +31,9 @@
                         </header>
                         <div class="list-inline text-center margin-bottom-10">
                             <a class="btn btn-default rounded" data-original-title="Facebook"
-                                href="{{action('HomeController@loginWithFacebook')}}"><i class="fa fa-facebook"></i> Facebook</a>
+                                href="/login/facebook"><i class="fa fa-facebook"></i> Facebook</a>
                             <a class="btn rounded btn-default" data-original-title="Google"
-                                href="{{action('HomeController@loginWithGoogle')}}"><i class="fa fa-google"></i> Google</a>
+                                href="/login/google"><i class="fa fa-google"></i> Google</a>
                         </div>
                         <p>Don't have an account? Click {{ HTML::linkRoute('register', 'here' )}} to register.</p>
                     </div>
@@ -70,6 +66,7 @@
                         </div>
                        </div>
                     </div>
+                    @include('flash::message')
                     @if (Session::get('error'))
                         <div class="alert alert-error alert-danger" role="alert">{{{ Session::get('error') }}}</div>
                     @endif
@@ -94,7 +91,7 @@
 
 @section('scripts2')
     <!-- jQuery Version 1.11.0 -->
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>>
     <script src="{{ asset('js/jquery-ui.js') }}"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
