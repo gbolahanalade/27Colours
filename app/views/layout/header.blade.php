@@ -17,9 +17,9 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <!-- plugins css -->
     <link rel="stylesheet" href="{{asset('plugins/owl-carousel/css/owl.carousel.css')}}">
-    <!-- <link rel="stylesheet" href="{{asset('plugins/owl-carousel/css/owl.theme.css')}}">
-    <link rel="stylesheet" href="{{asset('plugins/owl-carousel/css/bootstrapTheme.css')}}"> -->
     <link rel="stylesheet" href="{{asset('plugins/jasny-bootstrap/css/jasny-bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('plugins/cropper/css/cropper.css')}}">
+    <link rel="stylesheet" href="{{asset('plugins/cropper/css/main.css')}}">
     <link rel="stylesheet" href="{{asset('plugins/font-awesome-4.1.0/css/font-awesome.css')}}">
     <!-- GOOGLE FONTS -->
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,600,800%7COpen+Sans:400italic,400,600,700' 

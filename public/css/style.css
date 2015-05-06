@@ -53,6 +53,7 @@ header .header-register {
   margin-right: 20px;
   padding: 6px 5px;
   font-weight: 700;
+  font-size: 15px;
 }
 header .header-call-to-action a {
 	color: #FFF;
@@ -321,7 +322,8 @@ border-color: rgb(201, 48, 44);
 	text-align: center;
 }
 .post-title,
-.post-uploader {
+.post-uploader,
+.sidebar-thumb .media-body {
 	white-space: nowrap;
   	overflow: hidden;
   	text-overflow: ellipsis;
@@ -647,8 +649,19 @@ h3.userinfo-name {margin-top: 2px;}
 	position: relative;
 }
 .content .sidebar {
-	background-color: #F8F8F8;
+	background-color: inherit;
 	min-height: 400px;
+}
+.sidebar-thumb {
+	text-align: left;
+}
+.sidebar-thumb img {
+	width: 50px;
+	height: 50px;
+	margin-right: 5px;
+}
+.sidebar .post-util {
+	font-size: 11px !important;
 }
 .bckgrnd-white {
 	background-color: #fff;

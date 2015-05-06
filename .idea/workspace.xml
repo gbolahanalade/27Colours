@@ -2,29 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="598961b2-8b61-4559-adef-0e0a234ccadd" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\vhosts\29cols\.idea\.name" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/3048da911df64199e41f67d83f213672" afterPath="$PROJECT_DIR$/app/storage/views/3048da911df64199e41f67d83f213672" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/41bfc1534eea6032f47f2f3b67233d97" afterPath="$PROJECT_DIR$/app/storage/views/41bfc1534eea6032f47f2f3b67233d97" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/6c1304988c1b747aa30a46871a5a0ad6" afterPath="$PROJECT_DIR$/app/storage/views/6c1304988c1b747aa30a46871a5a0ad6" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/8465dd212eb018effd2bffd0ca564488" afterPath="$PROJECT_DIR$/app/storage/views/8465dd212eb018effd2bffd0ca564488" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Lib/AuthenticateUser.php" afterPath="$PROJECT_DIR$/app/Lib/AuthenticateUser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/BaseController.php" afterPath="$PROJECT_DIR$/app/controllers/BaseController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/ProfileController.php" afterPath="$PROJECT_DIR$/app/controllers/ProfileController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/User.php" afterPath="$PROJECT_DIR$/app/models/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/UserRepository.php" afterPath="$PROJECT_DIR$/app/models/UserRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/UsersController.php" afterPath="$PROJECT_DIR$/app/controllers/UsersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/app.php" afterPath="$PROJECT_DIR$/app/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/d644d7e605db952435521222ae6a58c4" afterPath="$PROJECT_DIR$/app/storage/views/d644d7e605db952435521222ae6a58c4" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/profile/edit.blade.php" afterPath="$PROJECT_DIR$/app/views/profile/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/filters.php" afterPath="$PROJECT_DIR$/app/filters.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/start/global.php" afterPath="$PROJECT_DIR$/app/start/global.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/galleries/52tBUXXfOWvs.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/galleries/IZiGZTMEs0OF.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/songs/images/aoQagZ_Empire_The Soundtrack_FINAL.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/2069e07ced8f2f2718c56a11632a16d4" afterPath="$PROJECT_DIR$/app/storage/views/2069e07ced8f2f2718c56a11632a16d4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/215d94352e382b45326c7333b460b1b2" afterPath="$PROJECT_DIR$/app/storage/views/215d94352e382b45326c7333b460b1b2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/34f3e59d1c660872e8796065afb90c75" afterPath="$PROJECT_DIR$/app/storage/views/34f3e59d1c660872e8796065afb90c75" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/4d15df2a2a6101aa29f1f20b310b222c" afterPath="$PROJECT_DIR$/app/storage/views/4d15df2a2a6101aa29f1f20b310b222c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/63a35a117c01924ea89ea1e77bd686ca" afterPath="$PROJECT_DIR$/app/storage/views/63a35a117c01924ea89ea1e77bd686ca" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/879b4e8127500d69bf76c39f41d25a5c" afterPath="$PROJECT_DIR$/app/storage/views/879b4e8127500d69bf76c39f41d25a5c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/98f304a76ce64cccea0269d2efb7d19a" afterPath="$PROJECT_DIR$/app/storage/views/98f304a76ce64cccea0269d2efb7d19a" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/controllers/HomeController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/f560a78894327d78cd47b6697ad3c8ea" afterPath="$PROJECT_DIR$/app/storage/views/f560a78894327d78cd47b6697ad3c8ea" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/gallery/gallery-sidebar.blade.php" afterPath="$PROJECT_DIR$/app/views/gallery/gallery-sidebar.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/gallery/gallery_upload.blade.php" afterPath="$PROJECT_DIR$/app/views/gallery/gallery_upload.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layout/header.blade.php" afterPath="$PROJECT_DIR$/app/views/layout/header.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/profile/index2.blade.php" afterPath="$PROJECT_DIR$/app/views/profile/index2.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/logs/laravel.log" afterPath="$PROJECT_DIR$/app/storage/logs/laravel.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/login.blade.php" afterPath="$PROJECT_DIR$/app/views/users/login.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/register.blade.php" afterPath="$PROJECT_DIR$/app/views/users/register.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/profile/index2_logout.blade.php" afterPath="$PROJECT_DIR$/app/views/profile/index2_logout.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/song/song-sidebar.blade.php" afterPath="$PROJECT_DIR$/app/views/song/song-sidebar.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/profile/talents.blade.php" afterPath="$PROJECT_DIR$/app/views/profile/talents.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/video/video-sidebar.blade.php" afterPath="$PROJECT_DIR$/app/views/video/video-sidebar.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="29cols.iws" />
@@ -50,14 +49,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.59615386" vertical-offset="1098" max-vertical-offset="2086">
-              <caret line="105" column="66" selection-start-line="105" selection-start-column="66" selection-end-line="105" selection-end-column="66" />
+            <state vertical-scroll-proportion="-16.173914" vertical-offset="1098" max-vertical-offset="2086">
+              <caret line="105" column="67" selection-start-line="105" selection-start-column="67" selection-end-line="105" selection-end-column="67" />
               <folding>
                 <element signature="e#7#390#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.849359" vertical-offset="1806" max-vertical-offset="2842">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -97,28 +106,10 @@
       <file leaf-file-name="index2.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/profile/index2.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.782609" vertical-offset="672" max-vertical-offset="5978">
-              <caret line="69" column="54" selection-start-line="69" selection-start-column="54" selection-end-line="69" selection-end-column="54" />
+            <state vertical-scroll-proportion="-12.782609" vertical-offset="826" max-vertical-offset="5572">
+              <caret line="80" column="54" selection-start-line="80" selection-start-column="54" selection-end-line="80" selection-end-column="54" />
               <folding>
-                <marker date="1430869607894" expanded="true" signature="2450:2605" placeholder="..." />
-                <marker date="1430869607894" expanded="true" signature="8779:8950" placeholder="..." />
-                <marker date="1430869607894" expanded="true" signature="12661:12834" placeholder="..." />
-                <marker date="1430869607894" expanded="true" signature="16568:16745" placeholder="..." />
-                <marker date="1430869607894" expanded="true" signature="21737:21895" placeholder="..." />
-                <marker date="1430869607894" expanded="true" signature="25021:25185" placeholder="..." />
-                <marker date="1430869607894" expanded="true" signature="28455:28627" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.0434783" vertical-offset="126" max-vertical-offset="1288">
-              <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-              <folding>
-                <element signature="e#7#38#0#PHP" expanded="true" />
+                <marker date="1430904580328" expanded="true" signature="2450:2605" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -194,7 +185,6 @@
         <option value="$PROJECT_DIR$/app/models/ProfilePicture.php" />
         <option value="$PROJECT_DIR$/app/views/profile/photo_upload.blade.php" />
         <option value="$PROJECT_DIR$/app/Lib/Forms/ProfilePictureForm.php" />
-        <option value="$PROJECT_DIR$/app/controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/app/Repository/ProfilePictureRepository.php" />
         <option value="$PROJECT_DIR$/app/controllers/RegistrationController.php" />
         <option value="$PROJECT_DIR$/app/Repository/UserRepository.php" />
@@ -230,6 +220,7 @@
         <option value="$PROJECT_DIR$/app/start/global.php" />
         <option value="$PROJECT_DIR$/app/views/users/register.blade.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/app/controllers/HomeController.php" />
       </list>
     </option>
   </component>
@@ -392,7 +383,7 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../29cols2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="rou&#9;FILE&#9;file://C:/vhosts/29cols/app/routes.php&#10;route&#9;FILE&#9;file://C:/vhosts/29cols/app/routes.php&#10;register&#9;FILE&#9;file://C:/vhosts/29cols/app/views/users/register.blade.php&#10;e&#9;FILE&#9;file://C:/vhosts/29cols/app/start/global.php&#10;rout&#9;FILE&#9;file://C:/vhosts/29cols/app/routes.php&#10;use&#9;FILE&#9;file://C:/vhosts/29cols/app/models/UserRepository.php&#10;filt&#9;FILE&#9;file://C:/vhosts/29cols/app/filters.php&#10;edit&#9;FILE&#9;file://C:/vhosts/29cols/app/views/profile/edit.blade.php&#10;user&#9;FILE&#9;file://C:/vhosts/29cols/app/models/User.php&#10;index2&#9;FILE&#9;file://C:/vhosts/29cols/app/views/profile/index2.blade.php&#10;pro&#9;FILE&#9;file://C:/vhosts/29cols/app/controllers/ProfileController.php&#10;filter&#9;FILE&#9;file://C:/vhosts/29cols/app/filters.php&#10;home&#9;FILE&#9;file://C:/vhosts/29cols/app/controllers/HomeController.php&#10;app&#9;FILE&#9;file://C:/vhosts/29cols/app/config/app.php&#10;header&#9;FILE&#9;file://C:/vhosts/29cols/app/views/layout/header.blade.php&#10;master&#9;FILE&#9;file://C:/vhosts/29cols/app/views/layout/master.blade.php&#10;confi&#9;FILE&#9;file://C:/vhosts/29cols/vendor/zizaco/confide/src/Confide/Confide.php&#10;oau&#9;FILE&#9;file://C:/vhosts/29cols/app/controllers/OauthController.php&#10;Vi&#9;FILE&#9;file://C:/vhosts/29cols/app/Lib/Forms/VideoUploadForm.php&#10;vi&#9;FILE&#9;file://C:/vhosts/29cols/app/views/video/video-upload.blade.php&#10;User&#9;FILE&#9;file://C:/vhosts/29cols/app/models/User.php&#10;pictu&#9;FILE&#9;file://C:/vhosts/29cols/app/Repository/ProfilePictureRepository.php&#10;userre&#9;FILE&#9;file://C:/vhosts/29cols/app/Repository/UserRepository.php&#10;base&#9;null&#9;null&#10;song&#9;null&#9;null&#10;vide&#9;FILE&#9;file://C:/vhosts/29cols/app/controllers/VideoController.php&#10;reg&#9;FILE&#9;file://C:/vhosts/29cols/app/controllers/RegistrationController.php&#10;Red&#9;FILE&#9;file://C:/vhosts/29cols/vendor/laravel/framework/src/Illuminate/Support/Facades/Redirect.php&#10;oauth&#9;FILE&#9;file://C:/vhosts/29cols/app/controllers/OauthController.php&#10;videocontr&#9;null&#9;null&#10;users&#9;FILE&#9;file://C:/vhosts/29cols/app/controllers/UsersController.php&#10;Redi&#9;FILE&#9;file://C:/vhosts/29cols/vendor/laravel/framework/src/Illuminate/Support/Facades/Redirect.php&#10;redirect&#9;null&#9;null&#10;registr&#9;FILE&#9;file://C:/vhosts/29cols/app/controllers/RegistrationController.php&#10;profile&#9;FILE&#9;file://C:/vhosts/29cols/app/models/ProfilePicture.php&#10;Home&#9;FILE&#9;file://C:/vhosts/29cols/app/controllers/HomeController.php&#10;Profil&#9;FILE&#9;file://C:/vhosts/29cols/app/Repository/ProfilePictureRepository.php&#10;regis&#9;FILE&#9;file://C:/vhosts/29cols/app/controllers/RegistrationController.php&#10;profilePi&#9;FILE&#9;file://C:/vhosts/29cols/app/Repository/ProfilePictureRepository.php&#10;html&#9;FILE&#9;file://C:/vhosts/29cols/vendor/laravel/framework/src/Illuminate/Html/HtmlBuilder.php&#10;migrat&#9;null&#9;null&#10;migra&#9;null&#9;null&#10;login&#9;FILE&#9;file://C:/vhosts/29cols/app/views/user/login.blade.php&#10;link_to_route&#9;null&#9;null&#10;creat&#9;FILE&#9;file://C:/vhosts/29cols/app/views/user/create.blade.php&#10;Mai&#9;FILE&#9;file://C:/vhosts/29cols/app/Lib/Mailers/Mailer.php&#10;mas&#9;FILE&#9;file://C:/vhosts/29cols/app/views/layouts/master.blade.php&#10;crea&#9;FILE&#9;file://C:/vhosts/29cols/app/views/user/create.blade.php&#10;start&#9;FILE&#9;file://C:/vhosts/29cols/bootstrap/start.php&#10;env&#9;FILE&#9;file://C:/vhosts/29cols/.env.local.php" />
+    <property name="SearchEverywhereHistoryKey" value="hom&#9;FILE&#9;file://C:/vhosts/29cols/app/controllers/HomeController.php&#10;rou&#9;FILE&#9;file://C:/vhosts/29cols/app/routes.php&#10;route&#9;FILE&#9;file://C:/vhosts/29cols/app/routes.php&#10;register&#9;FILE&#9;file://C:/vhosts/29cols/app/views/users/register.blade.php&#10;e&#9;FILE&#9;file://C:/vhosts/29cols/app/start/global.php&#10;rout&#9;FILE&#9;file://C:/vhosts/29cols/app/routes.php&#10;use&#9;FILE&#9;file://C:/vhosts/29cols/app/models/UserRepository.php&#10;filt&#9;FILE&#9;file://C:/vhosts/29cols/app/filters.php&#10;edit&#9;FILE&#9;file://C:/vhosts/29cols/app/views/profile/edit.blade.php&#10;user&#9;FILE&#9;file://C:/vhosts/29cols/app/models/User.php&#10;index2&#9;FILE&#9;file://C:/vhosts/29cols/app/views/profile/index2.blade.php&#10;pro&#9;FILE&#9;file://C:/vhosts/29cols/app/controllers/ProfileController.php&#10;filter&#9;FILE&#9;file://C:/vhosts/29cols/app/filters.php&#10;home&#9;FILE&#9;file://C:/vhosts/29cols/app/controllers/HomeController.php&#10;app&#9;FILE&#9;file://C:/vhosts/29cols/app/config/app.php&#10;header&#9;FILE&#9;file://C:/vhosts/29cols/app/views/layout/header.blade.php&#10;master&#9;FILE&#9;file://C:/vhosts/29cols/app/views/layout/master.blade.php&#10;confi&#9;FILE&#9;file://C:/vhosts/29cols/vendor/zizaco/confide/src/Confide/Confide.php&#10;oau&#9;FILE&#9;file://C:/vhosts/29cols/app/controllers/OauthController.php&#10;Vi&#9;FILE&#9;file://C:/vhosts/29cols/app/Lib/Forms/VideoUploadForm.php&#10;vi&#9;FILE&#9;file://C:/vhosts/29cols/app/views/video/video-upload.blade.php&#10;User&#9;FILE&#9;file://C:/vhosts/29cols/app/models/User.php&#10;pictu&#9;FILE&#9;file://C:/vhosts/29cols/app/Repository/ProfilePictureRepository.php&#10;userre&#9;FILE&#9;file://C:/vhosts/29cols/app/Repository/UserRepository.php&#10;base&#9;null&#9;null&#10;song&#9;null&#9;null&#10;vide&#9;FILE&#9;file://C:/vhosts/29cols/app/controllers/VideoController.php&#10;reg&#9;FILE&#9;file://C:/vhosts/29cols/app/controllers/RegistrationController.php&#10;Red&#9;FILE&#9;file://C:/vhosts/29cols/vendor/laravel/framework/src/Illuminate/Support/Facades/Redirect.php&#10;oauth&#9;FILE&#9;file://C:/vhosts/29cols/app/controllers/OauthController.php&#10;videocontr&#9;null&#9;null&#10;users&#9;FILE&#9;file://C:/vhosts/29cols/app/controllers/UsersController.php&#10;Redi&#9;FILE&#9;file://C:/vhosts/29cols/vendor/laravel/framework/src/Illuminate/Support/Facades/Redirect.php&#10;redirect&#9;null&#9;null&#10;registr&#9;FILE&#9;file://C:/vhosts/29cols/app/controllers/RegistrationController.php&#10;profile&#9;FILE&#9;file://C:/vhosts/29cols/app/models/ProfilePicture.php&#10;Home&#9;FILE&#9;file://C:/vhosts/29cols/app/controllers/HomeController.php&#10;Profil&#9;FILE&#9;file://C:/vhosts/29cols/app/Repository/ProfilePictureRepository.php&#10;regis&#9;FILE&#9;file://C:/vhosts/29cols/app/controllers/RegistrationController.php&#10;profilePi&#9;FILE&#9;file://C:/vhosts/29cols/app/Repository/ProfilePictureRepository.php&#10;html&#9;FILE&#9;file://C:/vhosts/29cols/vendor/laravel/framework/src/Illuminate/Html/HtmlBuilder.php&#10;migrat&#9;null&#9;null&#10;migra&#9;null&#9;null&#10;login&#9;FILE&#9;file://C:/vhosts/29cols/app/views/user/login.blade.php&#10;link_to_route&#9;null&#9;null&#10;creat&#9;FILE&#9;file://C:/vhosts/29cols/app/views/user/create.blade.php&#10;Mai&#9;FILE&#9;file://C:/vhosts/29cols/app/Lib/Mailers/Mailer.php&#10;mas&#9;FILE&#9;file://C:/vhosts/29cols/app/views/layouts/master.blade.php&#10;crea&#9;FILE&#9;file://C:/vhosts/29cols/app/views/user/create.blade.php&#10;start&#9;FILE&#9;file://C:/vhosts/29cols/bootstrap/start.php" />
     <property name="LayoutCode.rearrangeEntriesPHP" value="false" />
     <property name="options.lastSelected" value="editing.templates" />
     <property name="options.splitter.main.proportions" value="0.3" />
@@ -805,14 +796,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.913044" vertical-offset="81" max-vertical-offset="2814">
-          <caret line="50" column="7" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.0434783" vertical-offset="126" max-vertical-offset="1288">
@@ -868,16 +851,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/profile/index2.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.782609" vertical-offset="672" max-vertical-offset="5978">
-          <caret line="69" column="54" selection-start-line="69" selection-start-column="54" selection-end-line="69" selection-end-column="54" />
+        <state vertical-scroll-proportion="-12.782609" vertical-offset="826" max-vertical-offset="5572">
+          <caret line="80" column="54" selection-start-line="80" selection-start-column="54" selection-end-line="80" selection-end-column="54" />
           <folding>
-            <marker date="1430869607894" expanded="true" signature="2450:2605" placeholder="..." />
-            <marker date="1430869607894" expanded="true" signature="8779:8950" placeholder="..." />
-            <marker date="1430869607894" expanded="true" signature="12661:12834" placeholder="..." />
-            <marker date="1430869607894" expanded="true" signature="16568:16745" placeholder="..." />
-            <marker date="1430869607894" expanded="true" signature="21737:21895" placeholder="..." />
-            <marker date="1430869607894" expanded="true" signature="25021:25185" placeholder="..." />
-            <marker date="1430869607894" expanded="true" signature="28455:28627" placeholder="..." />
+            <marker date="1430904580328" expanded="true" signature="2450:2605" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -944,11 +921,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59615386" vertical-offset="1098" max-vertical-offset="2086">
-          <caret line="105" column="66" selection-start-line="105" selection-start-column="66" selection-end-line="105" selection-end-column="66" />
+        <state vertical-scroll-proportion="-16.173914" vertical-offset="1098" max-vertical-offset="2086">
+          <caret line="105" column="67" selection-start-line="105" selection-start-column="67" selection-end-line="105" selection-end-column="67" />
           <folding>
             <element signature="e#7#390#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.849359" vertical-offset="1806" max-vertical-offset="2842">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

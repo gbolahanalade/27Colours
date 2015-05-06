@@ -103,7 +103,7 @@ Route::group(
     }
 );
 
-Route::get('login/{provider}/{auth?}', 'UsersController@process');
+Route::get('login/{provider}/{auth?}', 'UsersController@process');h
 
 
 Route::get('migrate-data', function(){
