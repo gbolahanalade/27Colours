@@ -1,6 +1,13 @@
 /bootstrap/compiled.php
 /vendor
 /idea
+/app/storage/logs/*
+/public/img/
+/public/img/galleries
+/public/img/profile_photos
+/public/img/songs
+/public/img/uploads
+/public/uploads/videos
 composer.phar
 composer.lock
 .env.*.php

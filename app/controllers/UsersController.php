@@ -1,5 +1,6 @@
 <?php
 use App\Lib\AuthenticateUser;
+use App\Repositories\UserDetailRepository;
 use Illuminate\Support\Facades\Session;
 
 
@@ -55,6 +56,9 @@ class UsersController extends BaseController
                     }
                 );
             }
+
+            //create new user_detail row.
+            UserDetailRepository::createUserDetailRow($user->id);
 
             return Redirect::action('UsersController@getLogin')
                 ->with('notice', Lang::get('confide::confide.alerts.account_created'));

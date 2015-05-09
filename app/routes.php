@@ -11,8 +11,10 @@
 |
 */
 
+use App\Repositories\UserDetailRepository;
+
 Route::get('test', function(){
-    dd(Session::has('social_auth'));
+    return public_path('img/songs/');
 
 });
 
@@ -108,32 +110,6 @@ Route::get('login/{provider}/{auth?}', 'UsersController@process');
 
 Route::get('migrate-data', function(){
 
-    //select all data in user table
-    $all = User::all();
-
-    foreach ($all as $user) :
-
-        //check user_details table
-        if ( UserDetail::where('user_id', $user->id)->count() ):
-            continue;
-        endif;
-        $user_details = [
-            'user_id'       => $user->id,
-            'firstname'     => $user->first_name,
-            'lastname'      => $user->last_name,
-            'talents'       => $user->talents,
-            'facebook'      => $user->facebook,
-            'twitter'       => $user->twitter,
-            'soundcloud'    => $user->souncloud,
-            'youtube'       => $user->youtube,
-            'tagline'       => $user->tagline,
-            'googleID'      => $user->googleID,
-            'facebookID'    => $user->facebookID,
-        ];
-        //insert data here
-        UserDetail::create($user_details);
-
-    endforeach;
 
 return;
 

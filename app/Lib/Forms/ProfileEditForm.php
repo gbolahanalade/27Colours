@@ -15,4 +15,8 @@ class ProfileEditForm extends FormValidator {
         'tagline'       => 'required',
     ];
 
+    protected $messages = [
+        'tagline.required'      => 'Please Enter a brief bio.',
+    ];
+
 } 

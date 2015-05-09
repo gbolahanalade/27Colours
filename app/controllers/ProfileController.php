@@ -27,7 +27,7 @@ class ProfileController extends BaseController
     {
         $user = $this->me();
         $user_details = [
-            'firstname'         => $user->userdetails->firstname,
+            'firstname'         => ($user->userdetails->firstname) ?:'',
             'lastname'          => $user->userdetails->lastname,
             'talent'            => $user->userdetails->talents,
             'tagline'           => $user->userdetails->tagline,
@@ -36,6 +36,7 @@ class ProfileController extends BaseController
             'soundcloudpage'    => $user->userdetails->soundcloud,
             'youtube'           => $user->userdetails->youtube,
         ];
+
         return (Object) $user_details;
     }
 
