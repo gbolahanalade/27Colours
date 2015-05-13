@@ -47,7 +47,7 @@ class SongController extends BaseController
     {
     if (Auth::check()) {
 
-     $user = Auth::user();      
+     $user = Auth::user();
      $s_count= $user->songs()->count();
      if ($s_count < 10 ) {
         return View::make('song.song-upload');
@@ -68,6 +68,7 @@ class SongController extends BaseController
 
      public function postArtCreate()
      {
+
         $song = [
             'soundcloud' => Input::get('soundcloud'),
             'song' => Input::file('song'),
@@ -122,6 +123,7 @@ class SongController extends BaseController
 
     public function postCreate()
     {
+
         $music = [
             'youtube' => Input::get('youtube'),
             'title' => Input::get('title'),

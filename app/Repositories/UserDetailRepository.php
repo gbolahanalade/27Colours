@@ -10,4 +10,9 @@ class UserDetailRepository {
     {
         return UserDetail::where('user_id', $user_id)->update($data);
     }
+
+    public static function createUserDetailRow($user_id)
+    {
+        return UserDetail::create(['user_id'=>$user_id]);
+    }
 }
