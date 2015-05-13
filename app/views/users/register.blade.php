@@ -28,9 +28,9 @@
                         </header>
                         <div class="list-inline text-center margin-bottom-10 hidden">
                             <a class="btn rounded btn-facebook btn-facebook-inversed" data-original-title="Facebook" 
-                                href="/login/facebook"><i class="fa fa-facebook"></i> Facebook</a>
+                                href="{{action('HomeController@loginWithFacebook')}}"><i class="fa fa-facebook"></i> Facebook</a>
                             <a class="btn rounded btn-youtube btn-youtube-inversed" data-original-title="Google"
-                                href="/login/google"><i class="fa fa-google"></i> Google</a>
+                                href="{{action('HomeController@loginWithGoogle')}}"><i class="fa fa-google"></i> Google</a>
                         </div>
                         <p>Already registered? Click {{ HTML::linkRoute('login', 'here' )}} to sign in.</p>
                     </div>

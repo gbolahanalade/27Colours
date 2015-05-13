@@ -126,7 +126,7 @@ return array(
         'Intervention\Image\ImageServiceProvider',
         'Fbf\LaravelYoutube\LaravelYoutubeServiceProvider',
         'Fbf\LaravelComments\LaravelCommentsServiceProvider',
-        //'Cohensive\Embed\EmbedServiceProvider',
+        'Cohensive\Embed\EmbedServiceProvider',
         'Laracasts\Flash\FlashServiceProvider',
         'Laracasts\Commander\CommanderServiceProvider',
         'Laracasts\Validation\ValidationServiceProvider',
@@ -202,7 +202,7 @@ return array(
         'OAuth'             => 'Artdarek\OAuth\Facade\OAuth',
         'Image'             => 'Intervention\Image\Facades\Image',
         'Youtube'           => 'Fbf\LaravelYoutube\YoutubeFacade',
-        //'Embed'             => 'Cohensive\Embed\Facades\Embed',
+        'Embed'             => 'Cohensive\Embed\Facades\Embed',
         'Socialize'         => 'Laravel\Socialite\Facades\Socialite',
         'Flash'             => 'Laracasts\Flash\Flash',
 

@@ -17,8 +17,6 @@
     <link rel="stylesheet" href="<?php echo asset('css/style.css'); ?>">
     <!-- plugins css -->
     <link rel="stylesheet" href="<?php echo asset('plugins/owl-carousel/css/owl.carousel.css'); ?>">
-    <!-- <link rel="stylesheet" href="<?php echo asset('plugins/owl-carousel/css/owl.theme.css'); ?>">
-    <link rel="stylesheet" href="<?php echo asset('plugins/owl-carousel/css/bootstrapTheme.css'); ?>"> -->
     <link rel="stylesheet" href="<?php echo asset('plugins/jasny-bootstrap/css/jasny-bootstrap.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo asset('plugins/font-awesome-4.1.0/css/font-awesome.css'); ?>">
     <!-- GOOGLE FONTS -->
@@ -31,14 +29,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <!-- Sharing plugin -->
-    <script type="text/javascript">var switchTo5x=true;</script>
-    <script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
-    <script type="text/javascript">stLight.options(
-        {publisher: "462b8e41-098f-4d6e-af7f-52472fed576a", doNotHash: false, 
-        doNotCopy: false, hashAddressBar: true, displayText: "27Colours"});
-    </script>
+    
 </head>
 <body>
     <!-- wrapper -->
@@ -78,7 +69,7 @@
                                         <li><a href="<?php echo action('SongController@getNew'); ?>"><i class="fa fa-music fa-xs"></i> | Add Songs</a></li>
                                         <li><a href="<?php echo action('VideoController@getNew'); ?>"><i class="fa fa-video-camera fa-xs"></i> | Add Videos</a></li>
                                         <li><a href="<?php echo action('GalleryController@getNew'); ?>"><i class="fa fa-camera fa-xs"></i> | Add Pictures</a></li>
-                                        <li><?php echo HTML::linkRoute('logout', 'logout'); ?> </li>
+                                        <li><?php echo HTML::linkRoute('logout', 'logout', array ('class'=>'') ); ?> </li>
                                     <?php else: ?>
                                         <li><?php echo HTML::linkRoute('register', 'Registration', array('class'=>'hidden-xs hidden-sm')); ?></li>
                                         <li><?php echo HTML::linkRoute('login', 'Sign In' ); ?></li>
@@ -127,4 +118,4 @@
                 </div> <!-- ./ menu navigation -->
                 </div> <!-- ./ container -->
             </nav>
-        
+        </header>
